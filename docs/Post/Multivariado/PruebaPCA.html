@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Soul to Squeeze - Contenidos</title>
+<title>Soul to Squeeze - PCA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -62,63 +94,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-R .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-R'] = new List('listing-R', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-TS .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-TS'] = new List('listing-TS', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -132,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Soul to Squeeze</span>
     </a>
   </div>
@@ -143,19 +118,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Contenidos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./About.html" rel="" target="">
+    <a class="nav-link" href="../../About.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Untitled/Untitled.pdf" rel="" target="">
+    <a class="nav-link" href="../../Untitled/Untitled.pdf" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -181,10 +156,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a></li>
-  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a></li>
-  <li><a href="#project-2" id="toc-project-2" class="nav-link" data-scroll-target="#project-2">Project 2</a></li>
-  <li><a href="#project-3" id="toc-project-3" class="nav-link" data-scroll-target="#project-3">Project 3</a></li>
+  <li><a href="#ejemplo-aplicativo" id="toc-ejemplo-aplicativo" class="nav-link active" data-scroll-target="#ejemplo-aplicativo">Ejemplo Aplicativo</a>
+  <ul class="collapse">
+  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción">Descripción</a></li>
+  <li><a href="#conjunto-de-datos-de-los-100-mejores-clubes" id="toc-conjunto-de-datos-de-los-100-mejores-clubes" class="nav-link" data-scroll-target="#conjunto-de-datos-de-los-100-mejores-clubes">Conjunto de datos de los 100 mejores clubes</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -193,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Contenidos</h1>
+<h1 class="title">PCA</h1>
 </div>
 
 
@@ -208,183 +184,68 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
-<div id="listing-R" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-R-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-R'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-</th>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
-<th>
-Reading Time
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="R,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733126833" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Análisis Discriminante" data-listing-filename-sort="AnDisc.qmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Sep 6, 2023</span>
-</td>
-<td>
-<a href="./Post/Multivariado/AnDisc.html" class="title listing-title">Análisis Discriminante</a>
-</td>
-<td>
-<span class="listing-author">Oscar Chullo Puclla</span>
-</td>
-<td>
-<span class="listing-reading-time">2 min</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="R,Multivariado" data-listing-date-sort="1697691600000" data-listing-file-modified-sort="1697734163679" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Análisis Factorial" data-listing-filename-sort="AnFact.qmd">
-<td>
-<span class="listing-image"><img src="./Post/Multivariado/imagen/logo1.jpeg" style="height: 40px;"></span>
-</td>
-<td>
-<span class="listing-date">Oct 19, 2023</span>
-</td>
-<td>
-<a href="./Post/Multivariado/AnFact.html" class="title listing-title">Análisis Factorial</a>
-</td>
-<td>
-<span class="listing-author">Oscar Chullo Puclla</span>
-</td>
-<td>
-<span class="listing-reading-time">9 min</span>
-</td>
-</tr>
-<tr data-index="2" data-categories="R,PCA,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733193009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Análisis de Componentes Principales" data-listing-filename-sort="PCA.qmd">
-<td>
-<span class="listing-image"><p class="card-img-top"><img src="Post\Multivariado\PCA_files\figure-html\unnamed-chunk-2-1.png" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
-</td>
-<td>
-<span class="listing-date">Sep 6, 2023</span>
-</td>
-<td>
-<a href="./Post/Multivariado/PCA.html" class="title listing-title">Análisis de Componentes Principales</a>
-</td>
-<td>
-<span class="listing-author">Oscar Chullo Puclla</span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-<tr data-index="3" data-categories="R,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733229114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Análisis de Correspondencia Simple" data-listing-filename-sort="AnalisisCorrSimple.qmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Sep 6, 2023</span>
-</td>
-<td>
-<a href="./Post/Multivariado/AnalisisCorrSimple.html" class="title listing-title">Análisis de Correspondencia Simple</a>
-</td>
-<td>
-<span class="listing-author">Oscar Chullo Puclla</span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="4" data-categories="R,Clúster,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733210305" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Clúster" data-listing-filename-sort="Cluster.qmd">
-<td>
-<span class="listing-image"><div class="listing-item-img-placeholder card-img-top" style="height: 40px;">&nbsp;</div></span>
-</td>
-<td>
-<span class="listing-date">Sep 6, 2023</span>
-</td>
-<td>
-<a href="./Post/Multivariado/Cluster.html" class="title listing-title">Clúster</a>
-</td>
-<td>
-<span class="listing-author">Oscar Chullo Puclla</span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<p>El análisis de componentes principales (PCA) en la programación R es un análisis de los componentes lineales de todos los atributos existentes. Los componentes principales son combinaciones lineales (transformación ortogonal) del predictor original en el conjunto de datos. Es una técnica útil para EDA (análisis exploratorio de datos) y permite visualizar mejor las variaciones presentes en un conjunto de datos con muchas variables.</p>
+<p>Una de las aplicaciones del PCA es la reducción de dimensionalidad (variables), perdiendo la menor cantidad de información (varianza) posible: cuando tenemos un gran número de variables cuantitativas posiblemente correlacionadas (indicativas de la existencia de información redundante), el PCA nos permite reducirlos a un número menor de variables transformadas (componentes principales) que explican gran parte de la variabilidad de los datos. Cada dimensión o componente principal generado por PCA será una combinación lineal de las variables originales, y además serán independientes o no correlacionadas entre sí. Los componentes principales generados pueden, a su vez, utilizarse en métodos de aprendizaje supervisado, como la regresión de componentes principales o mínimos cuadrados parciales.</p>
+<p>El PCA también sirve como herramienta para la <strong>visualización de datos</strong>: supóngase que quisiéramos representar <span class="math inline">\(n\)</span> observaciones con medidas sobre <span class="math inline">\(p\)</span> variables <span class="math inline">\((X=X1,X2,...,Xp)\)</span> como parte de un análisis exploratorio de los datos. Lo que podríamos hacer es examinar representaciones bidimensionales, sin embargo, existen un total de <span class="math inline">\((p2)=p(p−1)/2\)</span> posibles representaciones entre pares de variables, y si el número de variables es muy alto, estas representaciones se harían inviables, además de que posiblemente la información contenida en cada una sería solo una pequeña fracción de la información total contenida en los datos.</p>
+<p>El PCA puede considerarse como una rotación de los ejes del sistema de coordenadas de las variables originales a nuevos ejes ortogonales, de manera que estos ejes coincidan con la dirección de máxima varianza de los datos.</p>
+<p><strong><em>NOTA:</em></strong> <em>El PCA no requiere la suposición de normalidad multivariante de los datos.</em></p>
+<section id="ejemplo-aplicativo" class="level1">
+<h1>Ejemplo Aplicativo</h1>
+<p>En esta presentación analizaremos un conjunto de datos relacionados con los 100 clubes de fútbol mejor valorados económicamente según la prestigiosa página Transfermarkt.com. A través de imágenes y gráficos intentaremos entender dónde, cómo y por qué en el mundo del fútbol están los 100 clubes que tienen las plantillas mejor valoradas.</p>
+<p>Las variables a analizar serán las ligas en las que se ubican estos clubes, la edad promedio de su plantilla, el número de jugadores que componen cada equipo, el valor total de cada plantilla en el mercado actual y el porcentaje del valor total. de la plantilla que clasifican a sus 18 jugadores más caros.</p>
+<p>Este es el enlace para acceder al conjunto de datos “Los 100 clubes de fútbol mejores valorados” https://www.kaggle.com/datasets/santiagovolpi/los-100-clubes-de-futbol-mejor-valuados-del-mundo.</p>
+<section id="descripción" class="level2">
+<h2 class="anchored" data-anchor-id="descripción">Descripción</h2>
+<p>Los conjuntos de datos incluyen:</p>
+<ul>
+<li>Club: nombre del club</li>
+<li>Competición: competición a la que pertenece el club</li>
+<li>Tamaño del equipo</li>
+<li>Valor de mercado</li>
+<li>Valor de mercado de los jugadores</li>
+<li>MV mejores 18 jugadores</li>
+<li>Proporción de VM</li>
+</ul>
 </section>
-<section id="time-series" class="level2">
-<h2 class="anchored" data-anchor-id="time-series">Time Series</h2>
-<div id="listing-TS" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<section id="conjunto-de-datos-de-los-100-mejores-clubes" class="level2">
+<h2 class="anchored" data-anchor-id="conjunto-de-datos-de-los-100-mejores-clubes">Conjunto de datos de los 100 mejores clubes</h2>
+<p>Para este análisis son 7 variables a estudiar, de las cuales 1 es cualitativa, mientras que las otras 6 son cuantitativas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datos/value.csv"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">Age =</span> <span class="fu">col_number</span>(), </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">Squad_size =</span> <span class="fu">col_number</span>(), <span class="at">Market_value =</span> <span class="fu">col_number</span>(), </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Market_value_of_players =</span> <span class="fu">col_number</span>(), </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">MV_Top_18_players =</span> <span class="fu">col_number</span>(), </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Share_of_MV =</span> <span class="fu">col_number</span>()))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [100 × 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Club                   : chr [1:100] "Manchester City" "Paris Saint-Germain" "Manchester United" "Chelsea FC" ...
+ $ Competition            : chr [1:100] "Premier League" "Ligue 1" "Premier League" "Premier League" ...
+ $ Age                    : num [1:100] 27.2 26.1 28 26.8 27 25.9 27.2 28.1 25.5 25.3 ...
+ $ Squad_size             : num [1:100] 23 35 28 27 27 26 27 22 24 29 ...
+ $ Market_value           : num [1:100] 1050 998 937 882 880 ...
+ $ Market_value_of_players: num [1:100] 45.8 28.5 33.5 32.7 32.6 ...
+ $ MV_Top_18_players      : num [1:100] 988 889 850 816 810 ...
+ $ Share_of_MV            : num [1:100] 93.9 89.1 90.7 92.5 92.2 96.1 89.2 96.7 90.7 91.6 ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Club = col_character(),
+  ..   Competition = col_character(),
+  ..   Age = col_number(),
+  ..   Squad_size = col_number(),
+  ..   Market_value = col_number(),
+  ..   Market_value_of_players = col_number(),
+  ..   MV_Top_18_players = col_number(),
+  ..   Share_of_MV = col_number()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
 </div>
 
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-</tr>
-</thead>
-<tbody class="list">
-</tbody>
 
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-<p>hola mundo <code>wey</code></p>
 </section>
-<section id="project-2" class="level2">
-<h2 class="anchored" data-anchor-id="project-2">Project 2</h2>
-<p><a href="./html/prueba.html">prueba</a></p>
-</section>
-<section id="project-3" class="level2">
-<h2 class="anchored" data-anchor-id="project-3">Project 3</h2>
-<p><a href="./Untitled/Untitled.html">cv</a></p>
-
-
-
 </section>
 
 </main> <!-- /main -->

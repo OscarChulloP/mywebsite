@@ -1,9 +1,31 @@
 ---
-title: "Projects"
+title: Contenidos
+listing: 
+  - id: R
+    contents: "Post/Multivariado/*.qmd" 
+    type: table
+    fields: [image, date, title, author, reading-time]
+  - id: TS
+    contents: "Post/Time_Series/*.qmd" 
+    type: table
 ---
 
-## Project 1
+## R
+
+:::{#R}
+:::
+
+## Time Series
+
+:::{#TS}
+:::
+
+hola mundo `wey`
 
 ## Project 2
 
+[prueba](html/prueba.qmd)
+
 ## Project 3
+
+[cv](Untitled/Untitled.Rmd)

@@ -1,23 +1,268 @@
 [
   {
-    "objectID": "projects.html#project-2",
-    "href": "projects.html#project-2",
-    "title": "Projects",
-    "section": "Project 2",
-    "text": "Project 2"
+    "objectID": "About.html",
+    "href": "About.html",
+    "title": "Oscar Chullo Puclla",
+    "section": "",
+    "text": "Modificar texto\nstudies neural networks and their applications at Google Brain. His research focuses on differentiable network pruning approximation and decentralized gradient inversion mechanics. He frequently collaborates with researchers who study machine learning, computer vision, and cognitive science. His work has been featured in WIRED, The Atlantic, Newsweek, and The New York Times Magazine.\n\n\nMassachusetts Institute of Technology | Cambridge, MA\nPh.D. in Computer Science | September 2009 - May 2014\nThe University of California, Berkeley | Berkeley, CA\nB.S. in Computer Science | September 2005 - May 2009\n\n\n\nGoogle Brain | Principal Investigator | January 2018 - Present\nNetflix | Research Scientist | June 2014 - December 2017"
   },
   {
-    "objectID": "projects.html#project-3",
-    "href": "projects.html#project-3",
-    "title": "Projects",
-    "section": "Project 3",
-    "text": "Project 3"
+    "objectID": "About.html#education",
+    "href": "About.html#education",
+    "title": "Oscar Chullo Puclla",
+    "section": "",
+    "text": "Massachusetts Institute of Technology | Cambridge, MA\nPh.D. in Computer Science | September 2009 - May 2014\nThe University of California, Berkeley | Berkeley, CA\nB.S. in Computer Science | September 2005 - May 2009"
+  },
+  {
+    "objectID": "About.html#experience",
+    "href": "About.html#experience",
+    "title": "Oscar Chullo Puclla",
+    "section": "",
+    "text": "Google Brain | Principal Investigator | January 2018 - Present\nNetflix | Research Scientist | June 2014 - December 2017"
+  },
+  {
+    "objectID": "html/prueba.html",
+    "href": "html/prueba.html",
+    "title": "Evento de Prueba 1",
+    "section": "",
+    "text": "This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\n\n\n\nYou can also embed plots, for example:\n\n\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n\n\nasdas"
+  },
+  {
+    "objectID": "html/prueba.html#including-plots",
+    "href": "html/prueba.html#including-plots",
+    "title": "Evento de Prueba 1",
+    "section": "",
+    "text": "You can also embed plots, for example:\n\n\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot."
+  },
+  {
+    "objectID": "html/prueba.html#hola-baby",
+    "href": "html/prueba.html#hola-baby",
+    "title": "Evento de Prueba 1",
+    "section": "",
+    "text": "asdas"
+  },
+  {
+    "objectID": "html/prueba.html#sadasd",
+    "href": "html/prueba.html#sadasd",
+    "title": "Evento de Prueba 1",
+    "section": "sadasd",
+    "text": "sadasd\nsadasd"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About Me",
+    "title": "Hola, bienvenido a mi website.",
     "section": "",
-    "text": "Thanks for checking out my web site!"
+    "text": "Aquí podrás encontrar información sobre diversos temas, como R, Python, Machine-Learning y más. También podrás interactuar conmigo por los enlaces en la barra de herramientas y pedirme que te ayude con algunas dudas, crear contenido creativo o mejorar.\n\n\n\n \n  \n   \n  \n    \n     twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LindedIn"
+  },
+  {
+    "objectID": "Post/Multivariado/AnalisisCorrSimple.html",
+    "href": "Post/Multivariado/AnalisisCorrSimple.html",
+    "title": "Análisis de Correspondencia Simple",
+    "section": "",
+    "text": "pruebas a llenar esto\n\\[x^2=4\\]"
+  },
+  {
+    "objectID": "Post/Multivariado/AnDisc.html",
+    "href": "Post/Multivariado/AnDisc.html",
+    "title": "Análisis Discriminante",
+    "section": "",
+    "text": "El Análisis Discriminante (AD),es una técnica de predicción en la pertenencia a un grupo (variable dependiente) a partir de un conjunto de predictores (variables independientes). El objetivo del AD es entender las diferencias de los grupos y predecir la verosimilitud de que una persona o un objeto pertenezca a una clase o grupo basándose en los valores que toma en los predictores.\nExisten dos enfoques en la clasificación discriminante:\nEl primer enfoque esta basado en conseguir, a partir de las variables explicativas, unas funciones lineales de éstas con la capacidad de clasificar a otros individuos, donde la función de mayor valor define el grupo al que pertenece de la forma más probable.\nEl AD solo admite variables cuantitativas como regresoras, por lo que si alguna de las variables independientes es categórica, hay que utilizar otros métodos alternativos de clasificación.\nRevisar también: https://rpubs.com/JairoAyala/CAD."
+  },
+  {
+    "objectID": "Post/Multivariado/AnDisc.html#análisis-discriminante-lineal",
+    "href": "Post/Multivariado/AnDisc.html#análisis-discriminante-lineal",
+    "title": "Análisis Discriminante",
+    "section": "Análisis Discriminante Lineal",
+    "text": "Análisis Discriminante Lineal\nEl análisis discriminante lineal (LDA) es un método de clasificación de aprendizaje automático supervisado (binario o multimonial) y un método de reducción de dimensiones. EL LDA encuentra combinaciones lineales de variables que mejor discriminan las clases de la variable respuesta.\nUn enfoque supone que las variables predictoras son variables aleatorias continuas normalmente distribuidas y con la misma varianza. Para que se cumpla esta condición, se deberá escalar los datos.\nPara una variable respuesta de k niveles, LDA produce k−1 (reglas) discriminantes utilizando el teorema de Bayes.\n\\[Pr[Y=C_l|X]=\\frac{P[Y=C_l]P[X|Y=C_l]}{\\sum}\\]\nDonde Y es la variable respuesta, X son los predictores y \\(C_l\\) es la clase \\(l-ésima\\). Entonces, la probablidad de que \\(Y\\) sea igual al nivel \\(C_l\\) dados los predictores \\(X\\) es igual a la probabilidad a priori de \\(Y\\) multiplicado por la probabilidad de observar \\(X\\) si \\(Y=C_l\\) dividido por la suma de todas las probabilidades de \\(X\\) data las priors. El valor predicho para cualquier \\(X\\) es simplemente \\(C_l\\) que tenga la probabilidad máxima.\nUna forma de calcular las probabilidades es asumir que \\(X\\) tiene una distribución normal multivariante con medias \\(\\mu_l\\) y varianza común \\(\\sum\\) . Entonces la función discriminante lineal para el grupo \\(l\\) es:\n\\[X´{\\sum}^{-1}\\mu_l-0.5{\\mu}´_l{\\sum}^{-1}\\mu_l+log(Pr[Y=C_l])\\]\nLa media teórica y la matriz de covarianza se estiman mediante la media muestral \\(\\mu=\\bar{x_l}\\) y la covarianza \\(\\sum=S\\), y los predictores \\(X\\) se reemplazan con los predictores de muestra que denotamos \\(\\mu\\)."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html",
+    "href": "Post/Multivariado/AnFact.html",
+    "title": "Análisis Factorial",
+    "section": "",
+    "text": "El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.\nEl análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.\nAl reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.\n\nEl sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.\nLa multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.\nLa alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.\n\nExisten dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#ventajas",
+    "href": "Post/Multivariado/AnFact.html#ventajas",
+    "title": "Análisis Factorial",
+    "section": "Ventajas",
+    "text": "Ventajas\n\nFA es una forma útil de combinar diferentes grupos de datos en factores representativos conocidos, reduciendo así la dimensionalidad de un conjunto de datos.\nFA puede tener en cuenta el conocimiento experto de los investigadores al elegir la cantidad de factores a utilizar y puede usarse para identificar variables latentes u ocultas que pueden no ser evidentes al utilizar otros métodos de análisis.\nEs fácil de implementar con muchas herramientas de software disponibles para realizar FA. La FA confirmatoria se puede utilizar para probar hipótesis."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#desventajas",
+    "href": "Post/Multivariado/AnFact.html#desventajas",
+    "title": "Análisis Factorial",
+    "section": "Desventajas",
+    "text": "Desventajas\n\nJustificar la elección del número de factores a utilizar puede resultar difícil si se sabe poco sobre la estructura de los datos antes de realizar el análisis.\nA veces, puede resultar difícil interpretar qué significan los factores una vez completado el análisis.\nAl igual que PCA, los métodos estándar para realizar FA suponen que las variables de entrada son continuas, aunque las extensiones de FA permiten incluir variables ordinales y binarias (después de transformar la matriz de entrada)."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#flujo-de-trabajo-en-r",
+    "href": "Post/Multivariado/AnFact.html#flujo-de-trabajo-en-r",
+    "title": "Análisis Factorial",
+    "section": "Flujo de trabajo en R",
+    "text": "Flujo de trabajo en R\n\nlibrary(tidyverse)\nlibrary(corrr)\nlibrary(psych)\nlibrary(lavaan)\nlibrary(kableExtra)\nlibrary(readxl)\n\nEl conjunto de datos sobre esperanza de vida contiene 31 observaciones de países.\n\nLifEx&lt;-read_xlsx(\"datos/datalife.xlsx\")\nLifEx |&gt;\n  kbl() |&gt;\n  kable_styling(full_width = FALSE)\n\n\n\n\nCountry\nm0\nm25\nm50\nm75\nw0\nw25\nw50\nw75\n\n\n\n\nArgelia\n63\n51\n30\n13\n67\n54\n34\n15\n\n\nCameroon\n34\n29\n13\n5\n38\n32\n17\n6\n\n\nMadagascar\n38\n30\n17\n7\n38\n34\n20\n7\n\n\nMauritius\n59\n42\n20\n6\n64\n46\n25\n8\n\n\nReunion\n56\n38\n18\n7\n62\n46\n25\n10\n\n\nSeychelles\n62\n44\n24\n7\n69\n50\n28\n14\n\n\nSouth Africa C\n50\n39\n20\n7\n55\n43\n23\n8\n\n\nSouth Africa W\n65\n44\n22\n7\n72\n50\n27\n9\n\n\nTunisia\n56\n46\n24\n11\n63\n54\n33\n19\n\n\nCanadá\n69\n47\n24\n8\n75\n53\n29\n10\n\n\nCosta Rica\n65\n48\n26\n9\n68\n50\n27\n10\n\n\nDominican Rep.\n64\n50\n28\n11\n66\n51\n29\n11\n\n\nEl Salvador\n56\n44\n25\n10\n61\n48\n27\n12\n\n\nGreenland\n60\n44\n22\n6\n65\n45\n25\n9\n\n\nGrenada\n61\n45\n22\n8\n65\n49\n27\n10\n\n\nGuatemala\n49\n40\n22\n9\n51\n41\n23\n8\n\n\nHonduras\n59\n42\n22\n6\n61\n43\n22\n7\n\n\nJamaica\n63\n44\n23\n8\n67\n48\n26\n9\n\n\nMexico\n59\n44\n24\n8\n63\n46\n25\n8\n\n\nNicaragua\n65\n48\n28\n14\n68\n51\n29\n13\n\n\nPanama\n65\n48\n26\n9\n67\n49\n27\n10\n\n\nTrinidad 62\n64\n63\n21\n7\n68\n47\n25\n9\n\n\nTrinidad 67\n64\n43\n21\n6\n68\n47\n24\n8\n\n\nUnited States 66\n67\n45\n23\n8\n74\n51\n28\n10\n\n\nUnited States NW66\n61\n40\n21\n10\n67\n46\n25\n11\n\n\nUnited States W66\n68\n46\n23\n8\n75\n52\n29\n10\n\n\nUnited States 67\n67\n45\n23\n8\n74\n51\n28\n10\n\n\nArgentina\n65\n46\n24\n9\n71\n51\n28\n10\n\n\nChile\n59\n43\n23\n10\n66\n49\n27\n12\n\n\nColombia\n58\n44\n24\n9\n62\n47\n25\n10\n\n\nEcuador\n57\n46\n28\n9\n60\n49\n28\n11"
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#explorando-la-matriz-de-correlación",
+    "href": "Post/Multivariado/AnFact.html#explorando-la-matriz-de-correlación",
+    "title": "Análisis Factorial",
+    "section": "Explorando la matriz de correlación",
+    "text": "Explorando la matriz de correlación\nEl insumo del análisis factorial es la matriz de correlación y, para algunos índices, el número de observaciones. Podemos explorar correlaciones con el paquete corrr:\n\ncor_tb &lt;- correlate(LifEx[,-1])\n\nCorrelation computed with\n• Method: 'pearson'\n• Missing treated using: 'pairwise.complete.obs'\n\n\ncorrr::rearrange agrupa variables altamente correlacionadas más juntas, y corrr::rplot visualiza el resultado (se ha usado una escala de color personalizada para resaltar los resultados):\n\ncor_tb |&gt;\n  rearrange() |&gt;\n  rplot(colors = c(\"red\", \"white\", \"blue\"))\n\n\n\n\nSe muestran 4 grupos, en torno a las variables:\n\nm0 y w0 (primer grupo).\nm25 y w25 (segundo grupo).\nm50 y w50 (tercer grupo).\nm75 y w75 (cuarto grupo).\n\nComencemos el flujo de trabajo del análisis factorial. Para ello necesitamos obtener las correlaciones en formato matricial con la función cor base R.\n\ncor_mat &lt;- cor(LifEx[,-1])"
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#pruebas-preliminares",
+    "href": "Post/Multivariado/AnFact.html#pruebas-preliminares",
+    "title": "Análisis Factorial",
+    "section": "Pruebas preliminares",
+    "text": "Pruebas preliminares\nEn el análisis preliminar, examinamos si la matriz de correlación es adecuada para el análisis factorial. Tenemos dos métodos disponibles:\n\nLa prueba de adecuación de la muestra de Kaiser-Meyer-Olkin (KMO). Según Kaiser (1974), los valores de KMO &gt; 0,9 son maravillosos, en 0,80, meritorios, en 0,70, mediocres, en 0,60, mediocres, en 0,50, miserables y por debajo de 0,5, inaceptables. Ese índice lo podemos obtener con psych::KMO. También proporciona una medida de adecuación de la muestra para cada variable.\nLa prueba de esfericidad de Bartlett. Es una prueba de la hipótesis de que la matriz de correlación es una matriz de identidad. Si se puede rechazar esta hipótesis nula, podemos suponer que las variables están correlacionadas y luego realizar un análisis factorial. Podemos hacer esta prueba con la función psych::cortest.bartlett.\n\nLos resultados de la prueba KMO son:\n\nKMO(cor_mat)\n\nKaiser-Meyer-Olkin factor adequacy\nCall: KMO(r = cor_mat)\nOverall MSA =  0.79\nMSA for each item = \n  m0  m25  m50  m75   w0  w25  w50  w75 \n0.69 0.90 0.78 0.86 0.68 0.84 0.86 0.83 \n\n\nEstos resultados pueden considerarse mediocres.\nLos resultados de la prueba de Bartlett son:\n\ncortest.bartlett(R = cor_mat, n = 31)\n\n$chisq\n[1] 372.3232\n\n$p.value\n[1] 7.881036e-62\n\n$df\n[1] 28\n\n\nEstos resultados proporcionan una fuerte evidencia de que las variables están correlacionadas."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#número-de-factores-a-extraer",
+    "href": "Post/Multivariado/AnFact.html#número-de-factores-a-extraer",
+    "title": "Análisis Factorial",
+    "section": "Número de factores a extraer",
+    "text": "Número de factores a extraer\nUn punto de partida para decidir cuántos factores extraer es examinar los valores propios de la matriz de correlación.\n\neigen(cor_mat)$values\n\n[1] 5.602410288 1.358181546 0.499327002 0.308125898 0.154689625 0.058633785\n[7] 0.012821625 0.005810232\n\n\nSe utilizan dos criterios para decidir el número de factores a extraer:\n\nElija tantos factores como valores propios sean mayores que uno.\nExamine el punto del codo del diagrama de pedregal. En ese gráfico tenemos el rango de los factores en el eje x y los valores propios en el eje y.\n\nHagamos el diagrama de pedregal para ver el punto del codo.\n\nn &lt;- dim(cor_mat)[1]\nscree_tb &lt;- tibble(x = 1:n, \n                   y = sort(eigen(cor_mat)$value, decreasing = TRUE))\n\nscree_plot &lt;- scree_tb |&gt;\n  ggplot(aes(x, y)) +\n  geom_point(color = \"cyan\") +\n  geom_line(color = \"ForestGreen\") +\n  scale_x_continuous(breaks = 1:n) +\n  ggtitle(\"Scree plot\")\n\nscree_plot\n\n\n\n\n\nscree_plot +\n  geom_vline(xintercept = 4, color = \"magenta\", linetype = \"dashed\") +\n  annotate(\"text\", 4.1, 2, label = \"elbow point\", color = \"magenta\", hjust = 0)\n\n\n\n\nObservamos que el método del codo ocurre con cuatro factores y que tenemos tres factores con valor propio mayor que uno. Se ha optado por obtener una solución de tres factores."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#cargas-factoriales-y-rotaciones",
+    "href": "Post/Multivariado/AnFact.html#cargas-factoriales-y-rotaciones",
+    "title": "Análisis Factorial",
+    "section": "Cargas factoriales y rotaciones",
+    "text": "Cargas factoriales y rotaciones\nCargas factoriales \\(f_{ij}\\) están definidos para cada variable \\(i\\) y factor \\(j\\), y representan la correlación entre ambos. Un alto valor de \\(f_{ij}\\) significa que una gran cantidad de variabilidad de la variable \\(i\\) puede explicarse por el factor \\(j\\).\nLas cargas factoriales de un modelo son únicas hasta una rotación. Preferimos métodos de rotación que obtienen cargas factoriales que permiten relacionar un factor con cada variable. Las rotaciones ortogonales producen un conjunto de factores no correlacionados. Los métodos de rotación ortogonal más comunes son:\n\nVarimax maximiza la varianza de las cargas al cuadrado en cada factor, de modo que cada factor tenga solo unas pocas variables con grandes cargas por factor.\nQuartimax minimiza la cantidad de factores necesarios para explicar una variable.\nEquamax es una combinación de varimax y quartimax.\n\nLas rotaciones oblicuas conducen a un conjunto de factores correlacionados. Los métodos de rotación oblicua más comunes son oblimin y promax.\nEn psych::fa, el tipo de rotación se pasa con el parámetro de rotación.\nPara un análisis factorial, podemos dividir la varianza de cada variable en:\n\nComunalidad h2: la proporción de la varianza explicada por factores.\nUnicidad u2: la proporción de la varianza no explicada por factores, por lo tanto única para la variable."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#interpretación-de-los-resultados",
+    "href": "Post/Multivariado/AnFact.html#interpretación-de-los-resultados",
+    "title": "Análisis Factorial",
+    "section": "Interpretación de los resultados",
+    "text": "Interpretación de los resultados\nPodemos realizar el análisis factorial utilizando la psych::fa función. Esta función permite varios métodos para realizar el análisis factorial especificando fmel parámetro. Las principales opciones disponibles son:\n\nfm = “minres” para la solución residual mínima (el valor predeterminado).\nfm = “ml” para la solución de máxima verosimilitud.\nfm = “pa” para la solución del eje principal.\n\nHagamos el análisis factorial utilizando el método del eje principal y la rotación varimax. Los otros parámetros son la matriz de correlación y el número de factores nfactors = 3.\n\nLifEx_factor &lt;- fa(r = cor_mat, nfactors = 3, fm = \"ml\", rotate = \"varimax\")\n\nEl resultado del análisis factorial realizado anteriormente es:\n\nLifEx_factor\n\nFactor Analysis using method =  ml\nCall: fa(r = cor_mat, nfactors = 3, rotate = \"varimax\", fm = \"ml\")\nStandardized loadings (pattern matrix) based upon correlation matrix\n     ML1  ML2  ML3   h2     u2 com\nm0  0.96 0.12 0.23 1.00 0.0048 1.1\nm25 0.65 0.17 0.44 0.64 0.3617 1.9\nm50 0.43 0.35 0.79 0.93 0.0663 2.0\nm75 0.08 0.52 0.66 0.71 0.2877 1.9\nw0  0.97 0.22 0.08 1.00 0.0049 1.1\nw25 0.76 0.56 0.31 0.99 0.0111 2.2\nw50 0.54 0.73 0.40 0.98 0.0201 2.5\nw75 0.16 0.87 0.28 0.85 0.1460 1.3\n\n                       ML1  ML2  ML3\nSS loadings           3.37 2.08 1.64\nProportion Var        0.42 0.26 0.21\nCumulative Var        0.42 0.68 0.89\nProportion Explained  0.48 0.29 0.23\nCumulative Proportion 0.48 0.77 1.00\n\nMean item complexity =  1.8\nTest of the hypothesis that 3 factors are sufficient.\n\ndf null model =  28  with the objective function =  14.05\ndf of  the model are 7  and the objective function was  0.27 \n\nThe root mean square of the residuals (RMSR) is  0.01 \nThe df corrected root mean square of the residuals is  0.03 \n\nFit based upon off diagonal values = 1\nMeasures of factor score adequacy             \n                                                   ML1  ML2  ML3\nCorrelation of (regression) scores with factors   1.00 0.98 0.95\nMultiple R square of scores with factors          1.00 0.95 0.91\nMinimum correlation of possible factor scores     0.99 0.91 0.82\n\n\nHay mucha información aquí. Veamos algunas ideas relevantes:\n\nLa solución comienza con las cargas factoriales para los factores ML1, ML3 y ML2. Las cargas factoriales son los únicos valores afectados por la rotación. Para cada variable obtenemos las comunalidades h2 y unicidades u2.\nLas comunidades son bastante heterogéneas, oscilando entre 0,96 para m0 y 0,76 para w25.\nLa proporción de varianza explicada por cada factor se presenta en Proportion Var y la varianza acumulada en Cumulative Var. De la Var acumulativa aprendemos que el modelo explica el 54% de la varianza total. Este valor se considera bajo para un análisis factorial exploratorio.\n\nPodemos ver mejor el patrón de cargas factoriales imprimiéndolas con un valor de corte:\n\nprint(LifEx_factor$loadings, cutoff = 0.3)\n\n\nLoadings:\n    ML1   ML2   ML3  \nm0  0.964            \nm25 0.646       0.438\nm50 0.430 0.354 0.790\nm75       0.525 0.656\nw0  0.970            \nw25 0.764 0.556 0.310\nw50 0.536 0.729 0.401\nw75       0.867      \n\n                 ML1   ML2   ML3\nSS loadings    3.375 2.082 1.640\nProportion Var 0.422 0.260 0.205\nCumulative Var 0.422 0.682 0.887\n\n\nPodemos ver que podemos agrupar las variables m0 a m50 y w0 a w50 en un factor ML1, las variables m50, m75 y w25 a w75 en el factor ML2 y las variables m25 a m75 en el factor ML3. Para este conjunto de datos, este resultado está en correspondencia con el significado de las variables. ML1 estaría relacionado con la capacidad visual, ML3 con la capacidad verbal y ML2 con la capacidad matemática."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#puntuaciones-de-los-factores",
+    "href": "Post/Multivariado/AnFact.html#puntuaciones-de-los-factores",
+    "title": "Análisis Factorial",
+    "section": "Puntuaciones de los factores",
+    "text": "Puntuaciones de los factores\nMientras que las cargas factoriales ayudan a interpretar el significado de los factores, las puntuaciones factoriales permiten obtener valores de los factores para cada observación. Los argumentos de psych::factor.scores son las observaciones para las que queremos calcular las puntuaciones y el modelo de análisis factorial:\n\nLifEx_scores &lt;- factor.scores(LifEx |&gt; select(m0:w75), LifEx_factor)\n\nEl resultado de factor.scores es una lista con matrices:\n\npuntuaciones con los valores de las puntuaciones de los factores para cada observación.\nponderaciones con las ponderaciones utilizadas para obtener las puntuaciones.\nr.scores, la matriz de correlación de las puntuaciones.\n\nVeamos cómo se ven las puntuaciones de los factores:\n\nLifEx_scores$scores |&gt;\n  as_tibble() |&gt;\n  slice(1:5) |&gt;\n  kbl() |&gt;\n  kable_styling(full_width = FALSE)\n\n\n\n\nML1\nML2\nML3\n\n\n\n\n-0.2698331\n1.9021552\n1.9665810\n\n\n-2.7806603\n-0.6926360\n-1.9102875\n\n\n-2.8120358\n-0.8260575\n0.0178951\n\n\n0.1453850\n-0.2773256\n-0.8947034\n\n\n-0.1912897\n0.5225114\n-1.6371799\n\n\n\n\n\n\n\nHagamos un diagrama de dispersión de los factores ML1 y ML3, destacando el país de cada observación.\n\nscores &lt;- as_tibble(LifEx_scores$scores)\nLifEx$sexM &lt;-LifEx[2:5]\nLifEx$sexW &lt;-LifEx[6:9]\nLifEx$sex &lt;-LifEx[10:11]\nscores &lt;- bind_cols(LifEx |&gt; select(Country, sexM,sexW), scores) \n\nscores |&gt;\n  ggplot(aes(ML1, ML2, color = Country)) +\n  geom_point() +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")\n\n\n\n\nEl gráfico muestra dos factores no correlacionados, distribuidos uniformemente entre los países."
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html",
+    "href": "Post/Multivariado/PCA.html",
+    "title": "Análisis de Componentes Principales",
+    "section": "",
+    "text": "El análisis de componentes principales (PCA) en la programación R es un análisis de los componentes lineales de todos los atributos existentes. Los componentes principales son combinaciones lineales (transformación ortogonal) del predictor original en el conjunto de datos. Es una técnica útil para EDA (análisis exploratorio de datos) y permite visualizar mejor las variaciones presentes en un conjunto de datos con muchas variables.\nUna de las aplicaciones del PCA es la reducción de dimensionalidad (variables), perdiendo la menor cantidad de información (varianza) posible: cuando tenemos un gran número de variables cuantitativas posiblemente correlacionadas (indicativas de la existencia de información redundante), el PCA nos permite reducirlos a un número menor de variables transformadas (componentes principales) que explican gran parte de la variabilidad de los datos. Cada dimensión o componente principal generado por PCA será una combinación lineal de las variables originales, y además serán independientes o no correlacionadas entre sí. Los componentes principales generados pueden, a su vez, utilizarse en métodos de aprendizaje supervisado, como la regresión de componentes principales o mínimos cuadrados parciales.\nEl PCA también sirve como herramienta para la visualización de datos: supóngase que quisiéramos representar \\(n\\) observaciones con medidas sobre \\(p\\) variables \\((X=X1,X2,...,Xp)\\) como parte de un análisis exploratorio de los datos. Lo que podríamos hacer es examinar representaciones bidimensionales, sin embargo, existen un total de \\((p2)=p(p−1)/2\\) posibles representaciones entre pares de variables, y si el número de variables es muy alto, estas representaciones se harían inviables, además de que posiblemente la información contenida en cada una sería solo una pequeña fracción de la información total contenida en los datos.\nEl PCA puede considerarse como una rotación de los ejes del sistema de coordenadas de las variables originales a nuevos ejes ortogonales, de manera que estos ejes coincidan con la dirección de máxima varianza de los datos.\nNOTA: El PCA no requiere la suposición de normalidad multivariante de los datos."
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html#descripción",
+    "href": "Post/Multivariado/PCA.html#descripción",
+    "title": "Análisis de Componentes Principales",
+    "section": "Descripción",
+    "text": "Descripción\nLos conjuntos de datos incluyen:\n\nClub: nombre del club\nCompetición: competición a la que pertenece el club\nTamaño del equipo\nValor de mercado\nValor de mercado de los jugadores\nMV mejores 18 jugadores\nProporción de VM"
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html#conjunto-de-datos-de-los-100-mejores-clubes",
+    "href": "Post/Multivariado/PCA.html#conjunto-de-datos-de-los-100-mejores-clubes",
+    "title": "Análisis de Componentes Principales",
+    "section": "Conjunto de datos de los 100 mejores clubes",
+    "text": "Conjunto de datos de los 100 mejores clubes\nPara este análisis son 7 variables a estudiar, de las cuales 1 es cualitativa, mientras que las otras 6 son cuantitativas.\n\nlibrary(readr)\nvalue &lt;- read_csv(\"datos/value.csv\", \n     col_types = cols(Age = col_number(), \n         Squad_size = col_number(), Market_value = col_number(), \n         Market_value_of_players = col_number(), \n         MV_Top_18_players = col_number(), \n         Share_of_MV = col_number()))\nstr(value)\n\nspc_tbl_ [100 × 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n $ Club                   : chr [1:100] \"Manchester City\" \"Paris Saint-Germain\" \"Manchester United\" \"Chelsea FC\" ...\n $ Competition            : chr [1:100] \"Premier League\" \"Ligue 1\" \"Premier League\" \"Premier League\" ...\n $ Age                    : num [1:100] 27.2 26.1 28 26.8 27 25.9 27.2 28.1 25.5 25.3 ...\n $ Squad_size             : num [1:100] 23 35 28 27 27 26 27 22 24 29 ...\n $ Market_value           : num [1:100] 1050 998 937 882 880 ...\n $ Market_value_of_players: num [1:100] 45.8 28.5 33.5 32.7 32.6 ...\n $ MV_Top_18_players      : num [1:100] 988 889 850 816 810 ...\n $ Share_of_MV            : num [1:100] 93.9 89.1 90.7 92.5 92.2 96.1 89.2 96.7 90.7 91.6 ...\n - attr(*, \"spec\")=\n  .. cols(\n  ..   Club = col_character(),\n  ..   Competition = col_character(),\n  ..   Age = col_number(),\n  ..   Squad_size = col_number(),\n  ..   Market_value = col_number(),\n  ..   Market_value_of_players = col_number(),\n  ..   MV_Top_18_players = col_number(),\n  ..   Share_of_MV = col_number()\n  .. )\n - attr(*, \"problems\")=&lt;externalptr&gt;"
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html#diagrama-de-dispersión-y-correlaciones",
+    "href": "Post/Multivariado/PCA.html#diagrama-de-dispersión-y-correlaciones",
+    "title": "Análisis de Componentes Principales",
+    "section": "Diagrama de dispersión y correlaciones",
+    "text": "Diagrama de dispersión y correlaciones\n\nlibrary(psych)\npairs.panels(value[,-2],\n             gap = 0,\n             bg = c(\"red\",\n                    \"blue\")[value$Competition],\n             pch=21)"
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html#paquete-r",
+    "href": "Post/Multivariado/PCA.html#paquete-r",
+    "title": "Análisis de Componentes Principales",
+    "section": "Paquete R",
+    "text": "Paquete R\n\nlibrary(readr)\nvalu &lt;- read_csv(\"datos/valu.csv\", col_types = cols(Age = col_number(), \n         Squad_size = col_number(), Market_value = col_number(), \n         Market_value_of_players = col_number(), \n         MV_Top_18_players = col_number(), \n         Share_of_MV = col_number()))\n\n\npc2 &lt;- prcomp(valu[,-1],\n             center = TRUE,\n            scale. = TRUE,na.rm = TRUE)\n\nWarning: In prcomp.default(valu[, -1], center = TRUE, scale. = TRUE, na.rm = TRUE) :\n extra argument 'na.rm' will be disregarded\n\nattributes(pc2)\n\n$names\n[1] \"sdev\"     \"rotation\" \"center\"   \"scale\"    \"x\"       \n\n$class\n[1] \"prcomp\"\n\n\n\npc2$center\n\n                    Age              Squad_size            Market_value \n                26.3080                 27.5400                292.6927 \nMarket_value_of_players       MV_Top_18_players             Share_of_MV \n                10.8522                270.7508                 92.4180 \n\n\n\nprint(pc2)\n\nStandard deviations (1, .., p=6):\n[1] 1.75158822 1.26016158 0.99494242 0.58818062 0.08848976 0.01530459\n\nRotation (n x k) = (6 x 6):\n                               PC1         PC2         PC3         PC4\nAge                     -0.1125183  0.22705161  0.92882782  0.27029270\nSquad_size               0.1790218 -0.67843255 -0.01674992  0.70174818\nMarket_value            -0.5564697 -0.16914257 -0.04172734  0.04736752\nMarket_value_of_players -0.5659828 -0.07688986 -0.02898629 -0.07299739\nMV_Top_18_players       -0.5599041 -0.14437269 -0.05078645  0.07073222\nShare_of_MV             -0.1086425  0.65788457 -0.36309460  0.64955061\n                                  PC5          PC6\nAge                     -0.0001246218 -0.002813782\nSquad_size              -0.1210852523 -0.016962987\nMarket_value             0.4952310739 -0.642256604\nMarket_value_of_players -0.8087160455 -0.116451693\nMV_Top_18_players        0.2920320302  0.756834826\nShare_of_MV             -0.0279317132 -0.029169214"
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html#resume",
+    "href": "Post/Multivariado/PCA.html#resume",
+    "title": "Análisis de Componentes Principales",
+    "section": "Resume",
+    "text": "Resume\n\nsummary(pc2)\n\nImportance of components:\n                          PC1    PC2    PC3     PC4     PC5     PC6\nStandard deviation     1.7516 1.2602 0.9949 0.58818 0.08849 0.01530\nProportion of Variance 0.5113 0.2647 0.1650 0.05766 0.00131 0.00004\nCumulative Proportion  0.5113 0.7760 0.9410 0.99866 0.99996 1.00000"
+  },
+  {
+    "objectID": "Post/Multivariado/PCA.html#ortogonalidad-de-las-pcs",
+    "href": "Post/Multivariado/PCA.html#ortogonalidad-de-las-pcs",
+    "title": "Análisis de Componentes Principales",
+    "section": "Ortogonalidad de las PCs",
+    "text": "Ortogonalidad de las PCs\n\npairs.panels(pc2$x,\n             gap=0,\n             bg = c(\"red\", \"blue\")[value$Competition],\n             pch=21)\n\n\n\n\nCálculo de la varianza total explicada por cada componente principal\n\n#calculate total variance explained by each principal component\nvar_explained = pc2$sdev^2 / sum(pc2$sdev^2)\n\n#create scree plot\nlibrary(ggplot2)\n\nqplot(c(1:6), var_explained) + \n  geom_line() + \n  xlab(\"Principal Component\") + \n  ylab(\"Variance Explained\") +\n  ggtitle(\"Scree Plot\") +\n  ylim(0, 1)\n\n\n\n\nSe observa que el PC1 explica alrededor del 51,13% d ela variabilidad y PC2 explica alrededor del 26,47% de la variabilidad.\nOtra forma de interpretar la trama es que PC1 está correlacionado positivamente con la variable Squad_size, y PC1 está correlacionado negativamente con Age, Market_value, Market_value_of_players, MV_Top_18_players, Share_of_MV.\nPC2 está correlacionado con Age y Share_of_MV, pero está correlacionado negativamente con Squad_size, Market_value, Market_value_of_players, MV_Top_18_players.\n\nlibrary(ggplot2)\nlibrary(usethis)\nlibrary(devtools)\ninstall_github(\"vqv/ggbiplot\")\nlibrary(ggbiplot)\ng &lt;- ggbiplot(pc2,\n              obs.scale = 1,\n              var.scale = 1,\n              groups = valu$Competition,\n              ellipse = TRUE,\n              circle = TRUE,\n              ellipse.prob = 0.68)\ng &lt;- g + scale_color_discrete(name = '')\ng &lt;- g + theme(legend.direction = 'horizontal',\n               legend.position = 'top')\nprint(g)\n\n\n\n\nBi plot es una herramienta importante en PCA para comprender lo que sucede en el conjunto de datos."
+  },
+  {
+    "objectID": "Post/Multivariado/PruebaPCA.html",
+    "href": "Post/Multivariado/PruebaPCA.html",
+    "title": "PCA",
+    "section": "",
+    "text": "El análisis de componentes principales (PCA) en la programación R es un análisis de los componentes lineales de todos los atributos existentes. Los componentes principales son combinaciones lineales (transformación ortogonal) del predictor original en el conjunto de datos. Es una técnica útil para EDA (análisis exploratorio de datos) y permite visualizar mejor las variaciones presentes en un conjunto de datos con muchas variables.\nUna de las aplicaciones del PCA es la reducción de dimensionalidad (variables), perdiendo la menor cantidad de información (varianza) posible: cuando tenemos un gran número de variables cuantitativas posiblemente correlacionadas (indicativas de la existencia de información redundante), el PCA nos permite reducirlos a un número menor de variables transformadas (componentes principales) que explican gran parte de la variabilidad de los datos. Cada dimensión o componente principal generado por PCA será una combinación lineal de las variables originales, y además serán independientes o no correlacionadas entre sí. Los componentes principales generados pueden, a su vez, utilizarse en métodos de aprendizaje supervisado, como la regresión de componentes principales o mínimos cuadrados parciales.\nEl PCA también sirve como herramienta para la visualización de datos: supóngase que quisiéramos representar \\(n\\) observaciones con medidas sobre \\(p\\) variables \\((X=X1,X2,...,Xp)\\) como parte de un análisis exploratorio de los datos. Lo que podríamos hacer es examinar representaciones bidimensionales, sin embargo, existen un total de \\((p2)=p(p−1)/2\\) posibles representaciones entre pares de variables, y si el número de variables es muy alto, estas representaciones se harían inviables, además de que posiblemente la información contenida en cada una sería solo una pequeña fracción de la información total contenida en los datos.\nEl PCA puede considerarse como una rotación de los ejes del sistema de coordenadas de las variables originales a nuevos ejes ortogonales, de manera que estos ejes coincidan con la dirección de máxima varianza de los datos.\nNOTA: El PCA no requiere la suposición de normalidad multivariante de los datos."
+  },
+  {
+    "objectID": "Post/Multivariado/PruebaPCA.html#descripción",
+    "href": "Post/Multivariado/PruebaPCA.html#descripción",
+    "title": "PCA",
+    "section": "Descripción",
+    "text": "Descripción\nLos conjuntos de datos incluyen:\n\nClub: nombre del club\nCompetición: competición a la que pertenece el club\nTamaño del equipo\nValor de mercado\nValor de mercado de los jugadores\nMV mejores 18 jugadores\nProporción de VM"
+  },
+  {
+    "objectID": "Post/Multivariado/PruebaPCA.html#conjunto-de-datos-de-los-100-mejores-clubes",
+    "href": "Post/Multivariado/PruebaPCA.html#conjunto-de-datos-de-los-100-mejores-clubes",
+    "title": "PCA",
+    "section": "Conjunto de datos de los 100 mejores clubes",
+    "text": "Conjunto de datos de los 100 mejores clubes\nPara este análisis son 7 variables a estudiar, de las cuales 1 es cualitativa, mientras que las otras 6 son cuantitativas.\n\nlibrary(readr)\nvalue &lt;- read_csv(\"datos/value.csv\", \n     col_types = cols(Age = col_number(), \n         Squad_size = col_number(), Market_value = col_number(), \n         Market_value_of_players = col_number(), \n         MV_Top_18_players = col_number(), \n         Share_of_MV = col_number()))\nstr(value)\n\nspc_tbl_ [100 × 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n $ Club                   : chr [1:100] \"Manchester City\" \"Paris Saint-Germain\" \"Manchester United\" \"Chelsea FC\" ...\n $ Competition            : chr [1:100] \"Premier League\" \"Ligue 1\" \"Premier League\" \"Premier League\" ...\n $ Age                    : num [1:100] 27.2 26.1 28 26.8 27 25.9 27.2 28.1 25.5 25.3 ...\n $ Squad_size             : num [1:100] 23 35 28 27 27 26 27 22 24 29 ...\n $ Market_value           : num [1:100] 1050 998 937 882 880 ...\n $ Market_value_of_players: num [1:100] 45.8 28.5 33.5 32.7 32.6 ...\n $ MV_Top_18_players      : num [1:100] 988 889 850 816 810 ...\n $ Share_of_MV            : num [1:100] 93.9 89.1 90.7 92.5 92.2 96.1 89.2 96.7 90.7 91.6 ...\n - attr(*, \"spec\")=\n  .. cols(\n  ..   Club = col_character(),\n  ..   Competition = col_character(),\n  ..   Age = col_number(),\n  ..   Squad_size = col_number(),\n  ..   Market_value = col_number(),\n  ..   Market_value_of_players = col_number(),\n  ..   MV_Top_18_players = col_number(),\n  ..   Share_of_MV = col_number()\n  .. )\n - attr(*, \"problems\")=&lt;externalptr&gt;"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Contenidos",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\nReading Time\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis Discriminante\n\n\nOscar Chullo Puclla\n\n\n2 min\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nAnálisis Factorial\n\n\nOscar Chullo Puclla\n\n\n9 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Componentes Principales\n\n\nOscar Chullo Puclla\n\n\n6 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Correspondencia Simple\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nClúster\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects.html#r",
+    "href": "projects.html#r",
+    "title": "Contenidos",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\nReading Time\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis Discriminante\n\n\nOscar Chullo Puclla\n\n\n2 min\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nAnálisis Factorial\n\n\nOscar Chullo Puclla\n\n\n9 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Componentes Principales\n\n\nOscar Chullo Puclla\n\n\n6 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Correspondencia Simple\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nClúster\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects.html#time-series",
+    "href": "projects.html#time-series",
+    "title": "Contenidos",
+    "section": "Time Series",
+    "text": "Time Series\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\nhola mundo wey"
+  },
+  {
+    "objectID": "projects.html#project-2",
+    "href": "projects.html#project-2",
+    "title": "Contenidos",
+    "section": "Project 2",
+    "text": "Project 2\nprueba"
+  },
+  {
+    "objectID": "projects.html#project-3",
+    "href": "projects.html#project-3",
+    "title": "Contenidos",
+    "section": "Project 3",
+    "text": "Project 3\ncv"
+  },
+  {
+    "objectID": "Untitled/Untitled.html",
+    "href": "Untitled/Untitled.html",
+    "title": "Some stuff about me",
+    "section": "",
+    "text": "Some stuff about me\n\nI poisoned myself doing research.\nI was the first woman to win a Nobel prize\nI was the first person and only woman to win a Nobel prize in two different sciences.\n\n\n\nEducation\n\n\n# A tibble: 3 × 5\n  what                  when    with                where          why      \n  &lt;chr&gt;                 &lt;chr&gt;   &lt;chr&gt;               &lt;chr&gt;          &lt;list&gt;   \n1 Informal studies      1889-91 Flying University   Warsaw, Poland &lt;chr [0]&gt;\n2 Master of Physics     1893    Sorbonne Université Paris, France  &lt;chr [0]&gt;\n3 Master of Mathematics 1894    Sorbonne Université Paris, France  &lt;chr [0]&gt;\n\n\n\n\nNobel Prizes\n\n\n# A tibble: 2 × 3\n  what                      when with                                           \n  &lt;glue&gt;                   &lt;dbl&gt; &lt;chr&gt;                                          \n1 Nobel Prize in Physics    1903 Awarded for her work on radioactivity with Pie…\n2 Nobel Prize in Chemistry  1911 Awarded for the discovery of radium and poloni…\n\n\n\n\nPublications\n\n\n\nC:/Users/USUARIO/AppData/Local/Temp/RtmpqIoERR/file1fe413093c22.yaml"
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#concepto",
+    "href": "Post/Multivariado/AnFact.html#concepto",
+    "title": "Análisis Factorial",
+    "section": "",
+    "text": "El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.\nEl análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.\nAl reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.\n\nEl sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.\nLa multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.\nLa alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.\n\nExisten dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes."
   }
 ]

@@ -1,19 +1,31 @@
 ---
-title: "About Me"
+title: "Hola, bienvenido a mi website."
 about:
   id: me
-  template: broadside
-  image: img/profile.png
+  template: jolla
+  image: img/cat.jpeg
+  image-shape: round
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/OChP193029?t=TN4dFKDvftisC453R5JtdQ&s=09
+    - icon: github
+      text: Github
+      href: https://github.com/OscarChulloP
+    - icon: linkedin
+      text: LindedIn
+      href: https://www.linkedin.com/in/oscar-chullo-puclla-87644a28b/
+      
+format:
+  html:
+    toc: false
 ---
 
 :::{#me}
 
-## Goals
+Aquí podrás encontrar información sobre diversos temas, como `R`, `Python`, `Machine-Learning` y más. También podrás interactuar conmigo por los enlaces en la barra de herramientas y pedirme que te ayude con algunas dudas, crear contenido creativo o mejorar. 
 
-## Education
-
-## Experience
+## Espero que disfrutes de tu visita y que encuentres lo que buscas. 
 
 :::
 
-Thanks for checking out my web site!

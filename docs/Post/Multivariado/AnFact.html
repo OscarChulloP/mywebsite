@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Oscar Chullo Puclla">
+<meta name="dcterms.date" content="2023-10-19">
+
+<title>Soul to Squeeze - Análisis Factorial</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Soul to Squeeze</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
+ <span class="menu-text">Contenidos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../About.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Untitled/Untitled.pdf" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://es.stackoverflow.com/users/340711/oscar-chullo-puclla" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-stack-overflow"></i></a>
+    <a href="https://www.linkedin.com/in/oscar-chullo-puclla-87644a28b/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <a href="https://twitter.com/OChP193029?t=TN4dFKDvftisC453R5JtdQ&amp;s=09" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
+    <a href="https://github.com/OscarChulloP" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://wa.me/51967025443" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-whatsapp"></i></a>
+    <a href="mailto:oscarchullop@gmail.com?asunto=Website" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#concepto" id="toc-concepto" class="nav-link active" data-scroll-target="#concepto">Concepto</a></li>
+  <li><a href="#ventajas" id="toc-ventajas" class="nav-link" data-scroll-target="#ventajas">Ventajas</a></li>
+  <li><a href="#desventajas" id="toc-desventajas" class="nav-link" data-scroll-target="#desventajas">Desventajas</a></li>
+  <li><a href="#ejemplo-aplicativo-life-expectancy" id="toc-ejemplo-aplicativo-life-expectancy" class="nav-link" data-scroll-target="#ejemplo-aplicativo-life-expectancy">Ejemplo Aplicativo: Life Expectancy</a>
+  <ul class="collapse">
+  <li><a href="#flujo-de-trabajo-en-r" id="toc-flujo-de-trabajo-en-r" class="nav-link" data-scroll-target="#flujo-de-trabajo-en-r">Flujo de trabajo en R</a></li>
+  <li><a href="#explorando-la-matriz-de-correlación" id="toc-explorando-la-matriz-de-correlación" class="nav-link" data-scroll-target="#explorando-la-matriz-de-correlación">Explorando la matriz de correlación</a></li>
+  <li><a href="#pruebas-preliminares" id="toc-pruebas-preliminares" class="nav-link" data-scroll-target="#pruebas-preliminares">Pruebas preliminares</a></li>
+  <li><a href="#número-de-factores-a-extraer" id="toc-número-de-factores-a-extraer" class="nav-link" data-scroll-target="#número-de-factores-a-extraer">Número de factores a extraer</a></li>
+  <li><a href="#cargas-factoriales-y-rotaciones" id="toc-cargas-factoriales-y-rotaciones" class="nav-link" data-scroll-target="#cargas-factoriales-y-rotaciones">Cargas factoriales y rotaciones</a></li>
+  <li><a href="#interpretación-de-los-resultados" id="toc-interpretación-de-los-resultados" class="nav-link" data-scroll-target="#interpretación-de-los-resultados">Interpretación de los resultados</a></li>
+  <li><a href="#puntuaciones-de-los-factores" id="toc-puntuaciones-de-los-factores" class="nav-link" data-scroll-target="#puntuaciones-de-los-factores">Puntuaciones de los factores</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Análisis Factorial</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Multivariado</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Oscar Chullo Puclla </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 19, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="concepto" class="level2">
+<h2 class="anchored" data-anchor-id="concepto">Concepto</h2>
+<p>El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.</p>
+<p>El análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.</p>
+<p>Al reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.</p>
+<ol type="1">
+<li><p>El sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.</p></li>
+<li><p>La multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.</p></li>
+<li><p>La alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.</p></li>
+</ol>
+<p>Existen dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes.</p>
+</section>
+<section id="ventajas" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas">Ventajas</h2>
+<ul>
+<li><p>FA es una forma útil de combinar diferentes grupos de datos en factores representativos conocidos, reduciendo así la dimensionalidad de un conjunto de datos.</p></li>
+<li><p>FA puede tener en cuenta el conocimiento experto de los investigadores al elegir la cantidad de factores a utilizar y puede usarse para identificar variables latentes u ocultas que pueden no ser evidentes al utilizar otros métodos de análisis.</p></li>
+<li><p>Es fácil de implementar con muchas herramientas de software disponibles para realizar FA. La FA confirmatoria se puede utilizar para probar hipótesis.</p></li>
+</ul>
+</section>
+<section id="desventajas" class="level2">
+<h2 class="anchored" data-anchor-id="desventajas">Desventajas</h2>
+<ul>
+<li><p>Justificar la elección del número de factores a utilizar puede resultar difícil si se sabe poco sobre la estructura de los datos antes de realizar el análisis.</p></li>
+<li><p>A veces, puede resultar difícil interpretar qué significan los factores una vez completado el análisis.</p></li>
+<li><p>Al igual que PCA, los métodos estándar para realizar FA suponen que las variables de entrada son continuas, aunque las extensiones de FA permiten incluir variables ordinales y binarias (después de transformar la matriz de entrada).</p></li>
+</ul>
+</section>
+<section id="ejemplo-aplicativo-life-expectancy" class="level1">
+<h1>Ejemplo Aplicativo: Life Expectancy</h1>
+<p>Se ha utilizado una base de datos “Life Expectancy” obtenido del libro “An Introduction to Applied Multivariate Analysis with R”, página 148.</p>
+<section id="flujo-de-trabajo-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="flujo-de-trabajo-en-r">Flujo de trabajo en R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>El conjunto de datos sobre esperanza de vida contiene 31 observaciones de países.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>LifEx<span class="ot">&lt;-</span><span class="fu">read_xlsx</span>(<span class="st">"datos/datalife.xlsx"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>LifEx <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Country</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">m0</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">m25</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">m50</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">m75</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">w0</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">w25</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">w50</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">w75</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Argelia</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cameroon</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Madagascar</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mauritius</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reunion</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Seychelles</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">South Africa C</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Africa W</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tunisia</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Canadá</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Costa Rica</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dominican Rep.</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">El Salvador</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Greenland</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Grenada</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Guatemala</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Honduras</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jamaica</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mexico</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nicaragua</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Panama</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Trinidad 62</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Trinidad 67</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United States 66</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States NW66</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United States W66</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States 67</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Argentina</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chile</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Colombia</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ecuador</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">11</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="explorando-la-matriz-de-correlación" class="level2">
+<h2 class="anchored" data-anchor-id="explorando-la-matriz-de-correlación">Explorando la matriz de correlación</h2>
+<p>El insumo del análisis factorial es la matriz de correlación y, para algunos índices, el número de observaciones. Podemos explorar correlaciones con el paquete corrr:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cor_tb <span class="ot">&lt;-</span> <span class="fu">correlate</span>(LifEx[,<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Correlation computed with
+• Method: 'pearson'
+• Missing treated using: 'pairwise.complete.obs'</code></pre>
+</div>
+</div>
+<p><code>corrr::rearrange</code> agrupa variables altamente correlacionadas más juntas, y <code>corrr::rplot</code> visualiza el resultado (se ha usado una escala de color personalizada para resaltar los resultados):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cor_tb <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rearrange</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rplot</span>(<span class="at">colors =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="AnFact_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Se muestran 4 grupos, en torno a las variables:</p>
+<ul>
+<li><p>m0 y w0 (primer grupo).</p></li>
+<li><p>m25 y w25 (segundo grupo).</p></li>
+<li><p>m50 y w50 (tercer grupo).</p></li>
+<li><p>m75 y w75 (cuarto grupo).</p></li>
+</ul>
+<p>Comencemos el flujo de trabajo del análisis factorial. Para ello necesitamos obtener las correlaciones en formato matricial con la función cor base R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cor_mat <span class="ot">&lt;-</span> <span class="fu">cor</span>(LifEx[,<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pruebas-preliminares" class="level2">
+<h2 class="anchored" data-anchor-id="pruebas-preliminares">Pruebas preliminares</h2>
+<p>En el análisis preliminar, examinamos si la matriz de correlación es adecuada para el análisis factorial. Tenemos dos métodos disponibles:</p>
+<ul>
+<li><p>La prueba de adecuación de la muestra de Kaiser-Meyer-Olkin (KMO). Según Kaiser (1974), los valores de KMO &gt; 0,9 son maravillosos, en 0,80, meritorios, en 0,70, mediocres, en 0,60, mediocres, en 0,50, miserables y por debajo de 0,5, inaceptables. Ese índice lo podemos obtener con <code>psych::KMO</code>. También proporciona una medida de adecuación de la muestra para cada variable.</p></li>
+<li><p>La prueba de esfericidad de Bartlett. Es una prueba de la hipótesis de que la matriz de correlación es una matriz de identidad. Si se puede rechazar esta hipótesis nula, podemos suponer que las variables están correlacionadas y luego realizar un análisis factorial. Podemos hacer esta prueba con la función <code>psych::cortest.bartlett</code>.</p></li>
+</ul>
+<p>Los resultados de la prueba KMO son:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">KMO</span>(cor_mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kaiser-Meyer-Olkin factor adequacy
+Call: KMO(r = cor_mat)
+Overall MSA =  0.79
+MSA for each item = 
+  m0  m25  m50  m75   w0  w25  w50  w75 
+0.69 0.90 0.78 0.86 0.68 0.84 0.86 0.83 </code></pre>
+</div>
+</div>
+<p>Estos resultados pueden considerarse mediocres.</p>
+<p>Los resultados de la prueba de Bartlett son:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cortest.bartlett</span>(<span class="at">R =</span> cor_mat, <span class="at">n =</span> <span class="dv">31</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$chisq
+[1] 372.3232
+
+$p.value
+[1] 7.881036e-62
+
+$df
+[1] 28</code></pre>
+</div>
+</div>
+<p>Estos resultados proporcionan una fuerte evidencia de que las variables están correlacionadas.</p>
+</section>
+<section id="número-de-factores-a-extraer" class="level2">
+<h2 class="anchored" data-anchor-id="número-de-factores-a-extraer">Número de factores a extraer</h2>
+<p>Un punto de partida para decidir cuántos factores extraer es examinar los valores propios de la matriz de correlación.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(cor_mat)<span class="sc">$</span>values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.602410288 1.358181546 0.499327002 0.308125898 0.154689625 0.058633785
+[7] 0.012821625 0.005810232</code></pre>
+</div>
+</div>
+<p>Se utilizan dos criterios para decidir el número de factores a extraer:</p>
+<ul>
+<li><p>Elija tantos factores como valores propios sean mayores que uno.</p></li>
+<li><p>Examine el punto del codo del diagrama de pedregal. En ese gráfico tenemos el rango de los factores en el eje x y los valores propios en el eje y.</p></li>
+</ul>
+<p>Hagamos el diagrama de pedregal para ver el punto del codo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">dim</span>(cor_mat)[<span class="dv">1</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>scree_tb <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span>n, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">y =</span> <span class="fu">sort</span>(<span class="fu">eigen</span>(cor_mat)<span class="sc">$</span>value, <span class="at">decreasing =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>scree_plot <span class="ot">&lt;-</span> scree_tb <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"cyan"</span>) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"ForestGreen"</span>) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span>n) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Scree plot"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>scree_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="AnFact_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>scree_plot <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"magenta"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="fl">4.1</span>, <span class="dv">2</span>, <span class="at">label =</span> <span class="st">"elbow point"</span>, <span class="at">color =</span> <span class="st">"magenta"</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="AnFact_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Observamos que el método del codo ocurre con cuatro factores y que tenemos tres factores con valor propio mayor que uno. <strong>Se ha optado por obtener una solución de tres factores</strong>.</p>
+</section>
+<section id="cargas-factoriales-y-rotaciones" class="level2">
+<h2 class="anchored" data-anchor-id="cargas-factoriales-y-rotaciones">Cargas factoriales y rotaciones</h2>
+<p>Cargas factoriales <span class="math inline">\(f_{ij}\)</span> están definidos para cada variable <span class="math inline">\(i\)</span> y factor <span class="math inline">\(j\)</span>, y representan la correlación entre ambos. Un alto valor de <span class="math inline">\(f_{ij}\)</span> significa que una gran cantidad de variabilidad de la variable <span class="math inline">\(i\)</span> puede explicarse por el factor <span class="math inline">\(j\)</span>.</p>
+<p>Las cargas factoriales de un modelo son únicas hasta una rotación. Preferimos métodos de rotación que obtienen cargas factoriales que permiten relacionar un factor con cada variable. Las <strong>rotaciones ortogonales</strong> producen un conjunto de factores no correlacionados. Los métodos de rotación ortogonal más comunes son:</p>
+<ul>
+<li><p>Varimax maximiza la varianza de las cargas al cuadrado en cada factor, de modo que cada factor tenga solo unas pocas variables con grandes cargas por factor.</p></li>
+<li><p>Quartimax minimiza la cantidad de factores necesarios para explicar una variable.</p></li>
+<li><p>Equamax es una combinación de varimax y quartimax.</p></li>
+</ul>
+<p>Las rotaciones oblicuas conducen a un conjunto de factores correlacionados. Los métodos de rotación oblicua más comunes son oblimin y promax.</p>
+<p>En <code>psych::fa</code>, el tipo de rotación se pasa con el parámetro de rotación.</p>
+<p>Para un análisis factorial, podemos dividir la varianza de cada variable en:</p>
+<ul>
+<li><p><strong>Comunalidad h2</strong>: la proporción de la varianza explicada por factores.</p></li>
+<li><p><strong>Unicidad u2</strong>: la proporción de la varianza no explicada por factores, por lo tanto única para la variable.</p></li>
+</ul>
+</section>
+<section id="interpretación-de-los-resultados" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-de-los-resultados">Interpretación de los resultados</h2>
+<p>Podemos realizar el análisis factorial utilizando la <code>psych::fa</code> función. Esta función permite varios métodos para realizar el análisis factorial especificando fmel parámetro. Las principales opciones disponibles son:</p>
+<ul>
+<li><p>fm = “minres” para la solución residual mínima (el valor predeterminado).</p></li>
+<li><p>fm = “ml” para la solución de máxima verosimilitud.</p></li>
+<li><p>fm = “pa” para la solución del eje principal.</p></li>
+</ul>
+<p>Hagamos el análisis factorial utilizando el método del eje principal y la rotación varimax. Los otros parámetros son la matriz de correlación y el número de factores nfactors = 3.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>LifEx_factor <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> cor_mat, <span class="at">nfactors =</span> <span class="dv">3</span>, <span class="at">fm =</span> <span class="st">"ml"</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>El resultado del análisis factorial realizado anteriormente es:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>LifEx_factor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Factor Analysis using method =  ml
+Call: fa(r = cor_mat, nfactors = 3, rotate = "varimax", fm = "ml")
+Standardized loadings (pattern matrix) based upon correlation matrix
+     ML1  ML2  ML3   h2     u2 com
+m0  0.96 0.12 0.23 1.00 0.0048 1.1
+m25 0.65 0.17 0.44 0.64 0.3617 1.9
+m50 0.43 0.35 0.79 0.93 0.0663 2.0
+m75 0.08 0.52 0.66 0.71 0.2877 1.9
+w0  0.97 0.22 0.08 1.00 0.0049 1.1
+w25 0.76 0.56 0.31 0.99 0.0111 2.2
+w50 0.54 0.73 0.40 0.98 0.0201 2.5
+w75 0.16 0.87 0.28 0.85 0.1460 1.3
+
+                       ML1  ML2  ML3
+SS loadings           3.37 2.08 1.64
+Proportion Var        0.42 0.26 0.21
+Cumulative Var        0.42 0.68 0.89
+Proportion Explained  0.48 0.29 0.23
+Cumulative Proportion 0.48 0.77 1.00
+
+Mean item complexity =  1.8
+Test of the hypothesis that 3 factors are sufficient.
+
+df null model =  28  with the objective function =  14.05
+df of  the model are 7  and the objective function was  0.27 
+
+The root mean square of the residuals (RMSR) is  0.01 
+The df corrected root mean square of the residuals is  0.03 
+
+Fit based upon off diagonal values = 1
+Measures of factor score adequacy             
+                                                   ML1  ML2  ML3
+Correlation of (regression) scores with factors   1.00 0.98 0.95
+Multiple R square of scores with factors          1.00 0.95 0.91
+Minimum correlation of possible factor scores     0.99 0.91 0.82</code></pre>
+</div>
+</div>
+<p>Hay mucha información aquí. Veamos algunas ideas relevantes:</p>
+<ul>
+<li><p>La solución comienza con las cargas factoriales para los factores ML1, ML3 y ML2. Las cargas factoriales son los únicos valores afectados por la rotación. Para cada variable obtenemos las comunalidades h2 y unicidades u2.</p></li>
+<li><p>Las comunidades son bastante heterogéneas, oscilando entre 0,96 para m0 y 0,76 para w25.</p></li>
+<li><p>La proporción de varianza explicada por cada factor se presenta en Proportion Var y la varianza acumulada en Cumulative Var. De la Var acumulativa aprendemos que el modelo explica el 54% de la varianza total. Este valor se considera bajo para un análisis factorial exploratorio.</p></li>
+</ul>
+<p>Podemos ver mejor el patrón de cargas factoriales imprimiéndolas con un valor de corte:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(LifEx_factor<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+    ML1   ML2   ML3  
+m0  0.964            
+m25 0.646       0.438
+m50 0.430 0.354 0.790
+m75       0.525 0.656
+w0  0.970            
+w25 0.764 0.556 0.310
+w50 0.536 0.729 0.401
+w75       0.867      
+
+                 ML1   ML2   ML3
+SS loadings    3.375 2.082 1.640
+Proportion Var 0.422 0.260 0.205
+Cumulative Var 0.422 0.682 0.887</code></pre>
+</div>
+</div>
+<p>Podemos ver que podemos agrupar las variables m0 a m50 y w0 a w50 en un factor ML1, las variables m50, m75 y w25 a w75 en el factor ML2 y las variables m25 a m75 en el factor ML3. Para este conjunto de datos, este resultado está en correspondencia con el significado de las variables. ML1 estaría relacionado con la capacidad visual, ML3 con la capacidad verbal y ML2 con la capacidad matemática.</p>
+</section>
+<section id="puntuaciones-de-los-factores" class="level2">
+<h2 class="anchored" data-anchor-id="puntuaciones-de-los-factores">Puntuaciones de los factores</h2>
+<p>Mientras que las cargas factoriales ayudan a interpretar el significado de los factores, las puntuaciones factoriales permiten obtener valores de los factores para cada observación. Los argumentos de <code>psych::factor.scores</code> son las observaciones para las que queremos calcular las puntuaciones y el modelo de análisis factorial:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>LifEx_scores <span class="ot">&lt;-</span> <span class="fu">factor.scores</span>(LifEx <span class="sc">|&gt;</span> <span class="fu">select</span>(m0<span class="sc">:</span>w75), LifEx_factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>El resultado de factor.scores es una lista con matrices:</p>
+<ul>
+<li><p><code>puntuaciones</code> con los valores de las puntuaciones de los factores para cada observación.</p></li>
+<li><p><code>ponderaciones</code> con las ponderaciones utilizadas para obtener las puntuaciones.</p></li>
+<li><p><code>r.scores</code>, la matriz de correlación de las puntuaciones.</p></li>
+</ul>
+<p>Veamos cómo se ven las puntuaciones de los factores:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>LifEx_scores<span class="sc">$</span>scores <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">ML1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ML2</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ML3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">-0.2698331</td>
+<td style="text-align: right;">1.9021552</td>
+<td style="text-align: right;">1.9665810</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">-2.7806603</td>
+<td style="text-align: right;">-0.6926360</td>
+<td style="text-align: right;">-1.9102875</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">-2.8120358</td>
+<td style="text-align: right;">-0.8260575</td>
+<td style="text-align: right;">0.0178951</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.1453850</td>
+<td style="text-align: right;">-0.2773256</td>
+<td style="text-align: right;">-0.8947034</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">-0.1912897</td>
+<td style="text-align: right;">0.5225114</td>
+<td style="text-align: right;">-1.6371799</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Hagamos un diagrama de dispersión de los factores ML1 y ML3, destacando el país de cada observación.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(LifEx_scores<span class="sc">$</span>scores)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>LifEx<span class="sc">$</span>sexM <span class="ot">&lt;-</span>LifEx[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>LifEx<span class="sc">$</span>sexW <span class="ot">&lt;-</span>LifEx[<span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>LifEx<span class="sc">$</span>sex <span class="ot">&lt;-</span>LifEx[<span class="dv">10</span><span class="sc">:</span><span class="dv">11</span>]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(LifEx <span class="sc">|&gt;</span> <span class="fu">select</span>(Country, sexM,sexW), scores) </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>scores <span class="sc">|&gt;</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(ML1, ML2, <span class="at">color =</span> Country)) <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="AnFact_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>El gráfico muestra dos factores no correlacionados, distribuidos uniformemente entre los países.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2023, Oscar Chullo Puclla</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Built with <a href="https://quarto.org/">Quarto</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

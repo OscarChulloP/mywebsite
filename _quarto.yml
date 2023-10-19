@@ -3,24 +3,37 @@ project:
   output-dir: docs
   
 website:
-  title: "MY WEB SITE"
+  title: "Soul to Squeeze"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - projects.qmd
+      - href: About.qmd
+        text: About
+      - href: Untitled/Untitled.pdf
+        text: CV
     tools:
+      - icon: stack-overflow
+        href: https://es.stackoverflow.com/users/340711/oscar-chullo-puclla
+      - icon: linkedin
+        href: https://www.linkedin.com/in/oscar-chullo-puclla-87644a28b/
       - icon: twitter
-        href: https://twitter.com/
+        href: https://twitter.com/OChP193029?t=TN4dFKDvftisC453R5JtdQ&s=09
       - icon: github
-        href: https://github.com/YOURUSERNAME/YOURREPO
+        href: https://github.com/OscarChulloP
+      - icon: whatsapp
+        href: https://wa.me/51967025443
+      - icon: envelope
+        href: mailto:oscarchullop@gmail.com?asunto=Website
   page-footer:
     right: "Built with [Quarto](https://quarto.org/)"
-    left: "&copy; Copyright 2023, YOUR NAME"
-
+    left: "&copy; Copyright 2023, Oscar Chullo Puclla"
 format:
   html:
-    theme: cerulean
+    theme: 
+      light: flatly
+      dark: darkly
     toc: true
 
 editor: source
