@@ -1,0 +1,101 @@
+Club,Competition,Age,Squad_size,Market_value,Market_value_of_players,MV_Top_18_players,Share_of_MV
+Manchester City,Premier League,27.2,23,€1050.00m,€45.75m,€988.00m,93.9 %
+Paris Saint-Germain,Ligue 1,26.1,35,€997.75m,€28.51m,€889.00m,89.1 %
+Manchester United,Premier League,28.0,28,€937.25m,€33.47m,€850.00m,90.7 %
+Chelsea FC,Premier League,26.8,27,€882.50m,€32.69m,€816.00m,92.5 %
+Liverpool FC,Premier League,27.0,27,€879.50m,€32.57m,€810.50m,92.2 %
+Bayern Munich,Bundesliga,25.9,26,€852.90m,€32.80m,€819.90m,96.1 %
+Real Madrid,LaLiga,27.2,27,€793.50m,€29.39m,€708.00m,89.2 %
+Atlético de Madrid,LaLiga,28.1,22,€755.20m,€34.33m,€730.00m,96.7 %
+Tottenham Hotspur,Premier League,25.5,24,€697.00m,€29.04m,€632.00m,90.7 %
+FC Barcelona,LaLiga,25.3,29,€677.00m,€23.34m,€620.00m,91.6 %
+Juventus FC,Serie A,27.3,25,€640.40m,€25.62m,€597.00m,93.2 %
+Inter Milan,Serie A,28.8,28,€573.30m,€20.48m,€548.00m,95.6 %
+Borussia Dortmund,Bundesliga,24.6,34,€565.90m,€16.64m,€518.00m,91.5 %
+Leicester City,Premier League,26.9,28,€550.10m,€19.65m,€502.00m,91.3 %
+Arsenal FC,Premier League,25.3,26,€548.50m,€21.10m,€484.00m,88.2 %
+SSC Napoli,Serie A,27.6,25,€517.75m,€20.71m,€493.00m,95.2 %
+RB Leipzig,Bundesliga,24.2,28,€505.55m,€18.06m,€454.50m,89.9 %
+AC Milan,Serie A,26.2,28,€466.90m,€16.68m,€424.00m,90.8 %
+Everton FC,Premier League,27.8,26,€433.75m,€16.68m,€401.20m,92.5 %
+Sevilla FC,LaLiga,28.2,26,€429.40m,€16.52m,€391.00m,91.1 %
+Atalanta BC,Serie A,27.1,26,€415.35m,€15.98m,€384.50m,92.6 %
+AS Roma,Serie A,25.1,30,€410.35m,€13.68m,€375.80m,91.6 %
+Aston Villa,Premier League,25.7,24,€408.30m,€17.01m,€392.80m,96.2 %
+Wolverhampton Wanderers,Premier League,26.3,24,€391.10m,€16.30m,€376.30m,96.2 %
+Real Sociedad,LaLiga,26.0,26,€377.00m,€14.50m,€354.50m,94.0 %
+West Ham United,Premier League,28.8,24,€353.25m,€14.72m,€341.50m,96.7 %
+Bayer 04 Leverkusen,Bundesliga,24.7,27,€352.75m,€13.06m,€323.00m,91.6 %
+AS Monaco,Ligue 1,24.5,28,€350.90m,€12.53m,€313.00m,89.2 %
+Olympique Lyon,Ligue 1,25.5,29,€348.50m,€12.02m,€333.10m,95.6 %
+Ajax Amsterdam,Eredivisie,25.6,25,€343.20m,€13.73m,€322.70m,94.0 %
+SS Lazio,Serie A,27.5,33,€326.60m,€9.90m,€301.80m,92.4 %
+Borussia Mönchengladbach,Bundesliga,25.4,28,€300.00m,€10.71m,€288.90m,96.3 %
+Villarreal CF,LaLiga,28.2,24,€298.90m,€12.45m,€284.00m,95.0 %
+VfL Wolfsburg,Bundesliga,25.2,32,€287.83m,€8.99m,€260.40m,90.5 %
+SL Benfica,Liga Bwin,27.1,29,€285.50m,€9.84m,€239.00m,83.7 %
+LOSC Lille,Ligue 1,25.4,26,€272.00m,€10.46m,€262.50m,96.5 %
+FC Porto,Liga Bwin,26.7,26,€265.00m,€10.19m,€242.00m,91.3 %
+Olympique Marseille,Ligue 1,23.4,30,€262.75m,€8.76m,€252.00m,95.9 %
+Leeds United,Premier League,24.9,24,€252.70m,€10.53m,€247.50m,97.9 %
+Valencia CF,LaLiga,25.6,27,€251.90m,€9.33m,€234.50m,93.1 %
+ACF Fiorentina,Serie A,26.9,26,€248.80m,€9.57m,€232.80m,93.6 %
+Brighton & Hove Albion,Premier League,25.8,26,€248.10m,€9.54m,€226.80m,91.4 %
+Newcastle United,Premier League,28.2,25,€241.40m,€9.66m,€223.00m,92.4 %
+Southampton FC,Premier League,25.6,27,€241.30m,€8.94m,€224.00m,92.8 %
+Crystal Palace,Premier League,27.5,26,€239.45m,€9.21m,€223.00m,93.1 %
+Eintracht Frankfurt,Bundesliga,25.5,32,€231.25m,€7.23m,€211.75m,91.6 %
+Real Betis Balompié,LaLiga,28.6,28,€223.40m,€7.98m,€208.20m,93.2 %
+OGC Nice,Ligue 1,24.1,26,€218.25m,€8.39m,€202.80m,92.9 %
+US Sassuolo,Serie A,27.2,27,€216.90m,€8.03m,€198.70m,91.6 %
+TSG 1899 Hoffenheim,Bundesliga,25.8,32,€207.65m,€6.49m,€181.30m,87.3 %
+Sporting CP,Liga Bwin,25.9,23,€198.20m,€8.62m,€189.00m,95.4 %
+Norwich City,Premier League,25.2,29,€189.55m,€6.54m,€174.50m,92.1 %
+Athletic Bilbao,LaLiga,26.4,26,€188.30m,€7.24m,€179.00m,95.1 %
+Stade Rennais FC,Ligue 1,23.6,28,€185.15m,€6.61m,€181.90m,98.2 %
+Torino FC,Serie A,26.0,30,€184.13m,€6.14m,€165.00m,89.6 %
+Shakhtar Donetsk,Premier Liga,25.7,29,€184.00m,€6.34m,€166.50m,90.5 %
+Zenit St. Petersburg,Premier Liga,27.0,22,€173.70m,€7.90m,€171.30m,98.6 %
+VfB Stuttgart,Bundesliga,23.4,33,€169.63m,€5.14m,€153.00m,90.2 %
+Brentford FC,Premier League,24.5,31,€166.45m,€5.37m,€154.00m,92.5 %
+Getafe CF,LaLiga,27.1,25,€159.45m,€6.38m,€153.20m,96.1 %
+PSV Eindhoven,Eredivisie,25.0,27,€158.05m,€5.85m,€147.50m,93.3 %
+Cagliari Calcio,Serie A,26.9,29,€153.53m,€5.29m,€142.80m,93.0 %
+Red Bull Salzburg,Bundesliga,23.1,28,€152.40m,€5.44m,€137.60m,90.3 %
+Club Brugge KV,Jupiler Pro League,24.1,31,€150.40m,€4.85m,€139.00m,92.4 %
+Clube de Regatas do Flamengo,Série A,27.4,31,€147.75m,€4.77m,€130.00m,88.0 %
+Fulham FC,Championship,27.0,29,€147.70m,€5.09m,€132.00m,89.4 %
+Burnley FC,Premier League,29.9,24,€145.30m,€6.05m,€138.50m,95.3 %
+Celta de Vigo,LaLiga,28.0,21,€143.80m,€6.85m,€140.50m,97.7 %
+Sociedade Esportiva Palmeiras,Série A,27.0,31,€143.20m,€4.62m,€125.95m,88.0 %
+Bologna FC 1909,Serie A,25.7,28,€142.48m,€5.09m,€133.30m,93.6 %
+Hertha BSC,Bundesliga,26.3,28,€137.05m,€4.89m,€124.70m,91.0 %
+Watford FC,Premier League,27.9,26,€133.00m,€5.12m,€119.00m,89.5 %
+Dynamo Kyiv,Premier Liga,25.4,30,€133.00m,€4.43m,€118.50m,89.1 %
+Besiktas JK,Süper Lig,27.7,32,€127.05m,€3.97m,€115.10m,90.6 %
+KRC Genk,Jupiler Pro League,23.3,24,€127.00m,€5.29m,€117.50m,92.5 %
+Spartak Moscow,Premier Liga,26.1,25,€125.50m,€5.02m,€121.00m,96.4 %
+SC Freiburg,Bundesliga,25.4,26,€125.15m,€4.81m,€119.40m,95.4 %
+UC Sampdoria,Serie A,27.1,27,€124.80m,€4.62m,€111.40m,89.3 %
+Sheffield United,Championship,28.0,27,€124.30m,€4.60m,€113.90m,91.6 %
+SC Braga,Liga Bwin,25.5,28,€119.15m,€4.26m,€108.00m,90.6 %
+Olympiacos Piraeus,Super League 1,26.1,33,€118.45m,€3.59m,€105.25m,88.9 %
+Fenerbahce SK,Süper Lig,25.3,32,€114.33m,€3.57m,€102.50m,89.7 %
+FK Krasnodar,Premier Liga,27.6,24,€113.25m,€4.72m,€109.10m,96.3 %
+AFC Bournemouth,Championship,25.4,25,€113.05m,€4.52m,€109.90m,97.2 %
+Levante UD,LaLiga,28.1,28,€112.50m,€4.02m,€104.10m,92.5 %
+GNK Dinamo Zagreb,1.HNL,26.2,29,€109.20m,€3.77m,€99.40m,91.0 %
+Hellas Verona,Serie A,26.7,26,€108.45m,€4.17m,€99.90m,92.1 %
+Rangers FC,Premiership,27.5,29,€105.00m,€3.62m,€98.70m,94.0 %
+Club Atlético River Plate,Liga Profesional,27.7,29,€103.93m,€3.58m,€96.35m,92.7 %
+Galatasaray A.S.,Süper Lig,26.7,31,€102.18m,€3.30m,€86.83m,85.0 %
+Udinese Calcio,Serie A,27.7,25,€101.45m,€4.06m,€95.20m,93.8 %
+Feyenoord Rotterdam,Eredivisie,23.5,28,€101.40m,€3.62m,€98.90m,97.5 %
+1.FSV Mainz 05,Bundesliga,25.5,25,€100.50m,€4.02m,€96.30m,95.8 %
+RCD Espanyol Barcelona,LaLiga,27.6,25,€100.30m,€4.01m,€90.30m,90.0 %
+Genoa CFC,Serie A,27.5,34,€99.20m,€2.92m,€86.00m,86.7 %
+Clube Atlético Mineiro,Série A,26.9,31,€98.45m,€3.18m,€84.95m,86.3 %
+FC Augsburg,Bundesliga,26.1,28,€97.10m,€3.47m,€88.00m,90.6 %
+Lokomotiv Moscow,Premier Liga,24.8,29,€97.03m,€3.35m,€86.50m,89.2 %
+Trabzonspor,Süper Lig,26.7,29,€96.30m,€3.32m,€89.00m,92.4 %
+CA Osasuna,LaLiga,27.7,27,€93.50m,€3.46m,€86.60m,92.6 %

@@ -1,0 +1,12 @@
+---
+title: Análisis de Correspondencia Simple
+author: Oscar Chullo Puclla
+date: '2023-09-06'
+categories:
+  - R
+  - Multivariado
+---
+
+pruebas a llenar esto 
+
+$$x^2=4$$

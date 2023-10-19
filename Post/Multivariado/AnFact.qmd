@@ -1,0 +1,266 @@
+---
+title: Análisis Factorial
+author: Oscar Chullo Puclla
+date: '2023-10-19'
+categories:
+  - R
+  - Multivariado
+image: "imagen/logo1.jpeg"
+reading-time: true
+---
+
+## Concepto
+
+El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.
+
+El análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.
+
+Al reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.
+
+1. El sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.
+
+2. La multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.
+
+3. La alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.
+
+Existen dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes.
+
+## Ventajas
+
+- FA es una forma útil de combinar diferentes grupos de datos en factores representativos conocidos, reduciendo así la dimensionalidad de un conjunto de datos.
+
+- FA puede tener en cuenta el conocimiento experto de los investigadores al elegir la cantidad de factores a utilizar y puede usarse para identificar variables latentes u ocultas que pueden no ser evidentes al utilizar otros métodos de análisis.
+
+- Es fácil de implementar con muchas herramientas de software disponibles para realizar FA. La FA confirmatoria se puede utilizar para probar hipótesis.
+
+## Desventajas
+
+- Justificar la elección del número de factores a utilizar puede resultar difícil si se sabe poco sobre la estructura de los datos antes de realizar el análisis.
+
+- A veces, puede resultar difícil interpretar qué significan los factores una vez completado el análisis.
+
+- Al igual que PCA, los métodos estándar para realizar FA suponen que las variables de entrada son continuas, aunque las extensiones de FA permiten incluir variables ordinales y binarias (después de transformar la matriz de entrada).
+
+# Ejemplo Aplicativo: Life Expectancy
+
+Se ha utilizado una base de datos "Life Expectancy" obtenido del libro "An Introduction to Applied Multivariate Analysis with R", página 148.
+
+## Flujo de trabajo en R
+
+```{r,warning=FALSE,message=FALSE}
+library(tidyverse)
+library(corrr)
+library(psych)
+library(lavaan)
+library(kableExtra)
+library(readxl)
+```
+
+El conjunto de datos sobre esperanza de vida contiene 31 observaciones de países.
+
+```{r}
+LifEx<-read_xlsx("datos/datalife.xlsx")
+LifEx |>
+  kbl() |>
+  kable_styling(full_width = FALSE)
+```
+
+## Explorando la matriz de correlación
+
+El insumo del análisis factorial es la matriz de correlación y, para algunos índices, el número de observaciones. Podemos explorar correlaciones con el paquete corrr:
+
+```{r, echo=TRUE}
+cor_tb <- correlate(LifEx[,-1])
+```
+
+`corrr::rearrange` agrupa variables altamente correlacionadas más juntas, y `corrr::rplot` visualiza el resultado (se ha usado una escala de color personalizada para resaltar los resultados):
+
+```{r, echo=TRUE}
+cor_tb |>
+  rearrange() |>
+  rplot(colors = c("red", "white", "blue"))
+```
+
+Se muestran 4 grupos, en torno a las variables:
+
+- m0 y w0 (primer grupo).
+
+- m25 y w25 (segundo grupo).
+
+- m50 y w50 (tercer grupo).
+
+- m75 y w75 (cuarto grupo).
+
+Comencemos el flujo de trabajo del análisis factorial. Para ello necesitamos obtener las correlaciones en formato matricial con la función cor base R.
+
+```{r, echo =T}
+cor_mat <- cor(LifEx[,-1])
+```
+
+## Pruebas preliminares
+
+En el análisis preliminar, examinamos si la matriz de correlación es adecuada para el análisis factorial. Tenemos dos métodos disponibles:
+
+- La prueba de adecuación de la muestra de Kaiser-Meyer-Olkin (KMO). Según Kaiser (1974), los valores de KMO > 0,9 son maravillosos, en 0,80, meritorios, en 0,70, mediocres, en 0,60, mediocres, en 0,50, miserables y por debajo de 0,5, inaceptables. Ese índice lo podemos obtener con `psych::KMO`. También proporciona una medida de adecuación de la muestra para cada variable.
+
+- La prueba de esfericidad de Bartlett. Es una prueba de la hipótesis de que la matriz de correlación es una matriz de identidad. Si se puede rechazar esta hipótesis nula, podemos suponer que las variables están correlacionadas y luego realizar un análisis factorial. Podemos hacer esta prueba con la función `psych::cortest.bartlett`.
+
+Los resultados de la prueba KMO son:
+
+```{r, echo =T, comment=NA}
+KMO(cor_mat)
+```
+
+Estos resultados pueden considerarse mediocres. 
+
+Los resultados de la prueba de Bartlett son:
+
+```{r, echo =T, comment=NA}
+cortest.bartlett(R = cor_mat, n = 31)
+```
+
+Estos resultados proporcionan una fuerte evidencia de que las variables están correlacionadas.
+
+## Número de factores a extraer
+
+Un punto de partida para decidir cuántos factores extraer es examinar los valores propios de la matriz de correlación.
+
+```{r, echo=TRUE, , comment=NA}
+eigen(cor_mat)$values
+```
+
+
+Se utilizan dos criterios para decidir el número de factores a extraer:
+
+- Elija tantos factores como valores propios sean mayores que uno.
+
+- Examine el punto del codo del diagrama de pedregal. En ese gráfico tenemos el rango de los factores en el eje x y los valores propios en el eje y.
+
+Hagamos el diagrama de pedregal para ver el punto del codo.
+
+```{r, echo=TRUE}
+n <- dim(cor_mat)[1]
+scree_tb <- tibble(x = 1:n, 
+                   y = sort(eigen(cor_mat)$value, decreasing = TRUE))
+
+scree_plot <- scree_tb |>
+  ggplot(aes(x, y)) +
+  geom_point(color = "cyan") +
+  geom_line(color = "ForestGreen") +
+  scale_x_continuous(breaks = 1:n) +
+  ggtitle("Scree plot")
+
+scree_plot
+```
+
+```{r, echo=TRUE}
+scree_plot +
+  geom_vline(xintercept = 4, color = "magenta", linetype = "dashed") +
+  annotate("text", 4.1, 2, label = "elbow point", color = "magenta", hjust = 0)
+```
+
+Observamos que el método del codo ocurre con cuatro factores y que tenemos tres factores con valor propio mayor que uno. **Se ha optado por obtener una solución de tres factores**.
+
+## Cargas factoriales y rotaciones
+
+Cargas factoriales $f_{ij}$ están definidos para cada variable $i$ y factor $j$, y representan la correlación entre ambos. Un alto valor de $f_{ij}$ significa que una gran cantidad de variabilidad de la variable $i$ puede explicarse por el factor $j$.
+
+Las cargas factoriales de un modelo son únicas hasta una rotación. Preferimos métodos de rotación que obtienen cargas factoriales que permiten relacionar un factor con cada variable. Las **rotaciones ortogonales** producen un conjunto de factores no correlacionados. Los métodos de rotación ortogonal más comunes son:
+
+- Varimax maximiza la varianza de las cargas al cuadrado en cada factor, de modo que cada factor tenga solo unas pocas variables con grandes cargas por factor.
+
+- Quartimax minimiza la cantidad de factores necesarios para explicar una variable.
+
+- Equamax es una combinación de varimax y quartimax.
+
+Las rotaciones oblicuas conducen a un conjunto de factores correlacionados. Los métodos de rotación oblicua más comunes son oblimin y promax.
+
+En `psych::fa`, el tipo de rotación se pasa con el parámetro de rotación.
+
+Para un análisis factorial, podemos dividir la varianza de cada variable en:
+
+- **Comunalidad h2**: la proporción de la varianza explicada por factores.
+
+- **Unicidad u2**: la proporción de la varianza no explicada por factores, por lo tanto única para la variable.
+
+## Interpretación de los resultados
+
+Podemos realizar el análisis factorial utilizando la `psych::fa` función. Esta función permite varios métodos para realizar el análisis factorial especificando fmel parámetro. Las principales opciones disponibles son:
+
+- fm = “minres” para la solución residual mínima (el valor predeterminado).
+
+- fm = “ml” para la solución de máxima verosimilitud.
+
+- fm = “pa” para la solución del eje principal.
+
+Hagamos el análisis factorial utilizando el método del eje principal y la rotación varimax. Los otros parámetros son la matriz de correlación y el número de factores nfactors = 3.
+
+```{r,echo=TRUE}
+LifEx_factor <- fa(r = cor_mat, nfactors = 3, fm = "ml", rotate = "varimax")
+```
+
+El resultado del análisis factorial realizado anteriormente es:
+
+```{r, echo=TRUE, comment=NA}
+LifEx_factor
+```
+
+Hay mucha información aquí. Veamos algunas ideas relevantes:
+
+- La solución comienza con las cargas factoriales para los factores ML1, ML3 y ML2. Las cargas factoriales son los únicos valores afectados por la rotación. Para cada variable obtenemos las comunalidades h2 y unicidades u2.
+
+- Las comunidades son bastante heterogéneas, oscilando entre 0,96 para m0 y 0,76 para w25.
+
+- La proporción de varianza explicada por cada factor se presenta en Proportion Var y la varianza acumulada en Cumulative Var. De la Var acumulativa aprendemos que el modelo explica el 54% de la varianza total. Este valor se considera bajo para un análisis factorial exploratorio.
+
+Podemos ver mejor el patrón de cargas factoriales imprimiéndolas con un valor de corte:
+
+```{r, echo=TRUE, comment=NA}
+print(LifEx_factor$loadings, cutoff = 0.3)
+```
+
+Podemos ver que podemos agrupar las variables m0 a m50 y w0 a w50 en un factor ML1, las variables m50, m75 y w25 a w75 en el factor ML2 y las variables m25 a m75 en el factor ML3. Para este conjunto de datos, este resultado está en correspondencia con el significado de las variables. ML1 estaría relacionado con la capacidad visual, ML3 con la capacidad verbal y ML2 con la capacidad matemática.
+
+## Puntuaciones de los factores
+
+Mientras que las cargas factoriales ayudan a interpretar el significado de los factores, las puntuaciones factoriales permiten obtener valores de los factores para cada observación. Los argumentos de `psych::factor.scores` son las observaciones para las que queremos calcular las puntuaciones y el modelo de análisis factorial:
+
+```{r,echo=TRUE}
+LifEx_scores <- factor.scores(LifEx |> select(m0:w75), LifEx_factor)
+```
+
+El resultado de factor.scores es una lista con matrices:
+
+- `puntuaciones` con los valores de las puntuaciones de los factores para cada observación.
+
+- `ponderaciones` con las ponderaciones utilizadas para obtener las puntuaciones.
+
+- `r.scores`, la matriz de correlación de las puntuaciones.
+
+Veamos cómo se ven las puntuaciones de los factores:
+
+```{r, echo=TRUE}
+LifEx_scores$scores |>
+  as_tibble() |>
+  slice(1:5) |>
+  kbl() |>
+  kable_styling(full_width = FALSE)
+```
+
+Hagamos un diagrama de dispersión de los factores ML1 y ML3, destacando el país de cada observación.
+
+```{r, echo=TRUE}
+scores <- as_tibble(LifEx_scores$scores)
+LifEx$sexM <-LifEx[2:5]
+LifEx$sexW <-LifEx[6:9]
+LifEx$sex <-LifEx[10:11]
+scores <- bind_cols(LifEx |> select(Country, sexM,sexW), scores) 
+
+scores |>
+  ggplot(aes(ML1, ML2, color = Country)) +
+  geom_point() +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+El gráfico muestra dos factores no correlacionados, distribuidos uniformemente entre los países.

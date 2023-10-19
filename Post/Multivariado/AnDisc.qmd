@@ -1,0 +1,40 @@
+---
+title: Análisis Discriminante
+author: Oscar Chullo Puclla
+date: '2023-09-06'
+categories:
+  - R
+  - Multivariado
+---
+
+El Análisis Discriminante (AD),es una técnica de predicción en la pertenencia a un grupo (variable dependiente) a partir de un conjunto de predictores (variables independientes). El objetivo del AD es entender las diferencias de los grupos y predecir la verosimilitud de que una persona o un objeto pertenezca a una clase o grupo basándose en los valores que toma en los predictores.
+
+Existen dos enfoques en la clasificación discriminante:
+
+1. El basado en la obtención de funciones discriminantes de cálculo similar a las ecuaciones de regresión lineal múltiple.
+
+2. Empleando técnicas de correlación canónica y de componentes principales, denominado análisis discriminante canónico.
+
+El primer enfoque esta basado en conseguir, a partir de las variables explicativas, unas funciones lineales de éstas con la capacidad de clasificar a otros individuos, donde la función de mayor valor define el grupo al que pertenece de la forma más probable.
+
+El AD solo admite variables cuantitativas como regresoras, por lo que si alguna de las variables independientes es categórica, hay que utilizar otros métodos alternativos de clasificación. 
+
+Revisar también: https://rpubs.com/JairoAyala/CAD.
+
+## Análisis Discriminante Lineal
+
+El análisis discriminante lineal (LDA) es un método de clasificación de aprendizaje automático supervisado (binario o multimonial) y un método de reducción de dimensiones. EL LDA encuentra combinaciones lineales de variables que mejor `discriminan` las clases de la variable respuesta.
+
+Un enfoque supone que las variables predictoras son variables aleatorias continuas normalmente distribuidas y con la misma varianza. Para que se cumpla esta condición, se deberá escalar los datos.
+
+Para una variable respuesta de *k* niveles, LDA produce **k−1** (reglas) discriminantes utilizando el teorema de Bayes.
+
+$$Pr[Y=C_l|X]=\frac{P[Y=C_l]P[X|Y=C_l]}{\sum}$$
+
+Donde ***Y*** es la variable respuesta, ***X*** son los predictores y $C_l$ es la clase $l-ésima$. Entonces, la probablidad de que $Y$ sea igual al nivel $C_l$ dados los predictores $X$ es igual a la probabilidad a priori de $Y$ multiplicado por la probabilidad de observar $X$ si $Y=C_l$ dividido por la suma de todas las probabilidades de $X$ data las priors. El valor predicho para cualquier $X$ es simplemente $C_l$ que tenga la probabilidad máxima.
+
+Una forma de calcular las probabilidades es asumir que $X$ tiene una distribución normal multivariante con medias $\mu_l$ y varianza común $\sum$ . Entonces la función discriminante lineal para el grupo $l$ es:
+
+$$X´{\sum}^{-1}\mu_l-0.5{\mu}´_l{\sum}^{-1}\mu_l+log(Pr[Y=C_l])$$
+
+La media teórica y la matriz de covarianza se estiman mediante la media muestral $\mu=\bar{x_l}$ y la covarianza $\sum=S$, y los predictores $X$ se reemplazan con los predictores de muestra que denotamos $\mu$.
