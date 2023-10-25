@@ -4,21 +4,35 @@
     "href": "About.html",
     "title": "Oscar Chullo Puclla",
     "section": "",
-    "text": "Modificar texto\nstudies neural networks and their applications at Google Brain. His research focuses on differentiable network pruning approximation and decentralized gradient inversion mechanics. He frequently collaborates with researchers who study machine learning, computer vision, and cognitive science. His work has been featured in WIRED, The Atlantic, Newsweek, and The New York Times Magazine.\n\n\nMassachusetts Institute of Technology | Cambridge, MA\nPh.D. in Computer Science | September 2009 - May 2014\nThe University of California, Berkeley | Berkeley, CA\nB.S. in Computer Science | September 2005 - May 2009\n\n\n\nGoogle Brain | Principal Investigator | January 2018 - Present\nNetflix | Research Scientist | June 2014 - December 2017"
+    "text": "Hola, mi nombre es Oscar Chullo Puclla y soy matemático - estadístico. Me dedico a analizar datos y extraer información relevante para la toma de decisiones. Me apasiona la estadística y me gusta estar al día de las últimas tendencias y herramientas como actualmemte lo es Quarto.\nMe caracteriza la responsabilidad, el orden y la libertad en la exploración de nuevos recursos en los proyectos que me proponga. Vengo trabajando en muchos proyectos como en el sector financiero, donde he trabajado en temáticas de riesgo crediticio, además de otros proyectos aplicativos de machine-learning.\nTengo el objetivo de ayudar a las poblaciones u organizaciones a mejorar su rendimiento y optimizar sus recursos mediante el uso de técnicas estadísticas avanzadas, asi como tambien de guiar a futuros profesionales.\nPor ello, construí el presente website como producto de los conocimientos que adquiero aprendiendo."
   },
   {
-    "objectID": "About.html#education",
-    "href": "About.html#education",
+    "objectID": "About.html#presentación",
+    "href": "About.html#presentación",
     "title": "Oscar Chullo Puclla",
     "section": "",
-    "text": "Massachusetts Institute of Technology | Cambridge, MA\nPh.D. in Computer Science | September 2009 - May 2014\nThe University of California, Berkeley | Berkeley, CA\nB.S. in Computer Science | September 2005 - May 2009"
+    "text": "Hola, mi nombre es Oscar Chullo Puclla y soy matemático - estadístico. Me dedico a analizar datos y extraer información relevante para la toma de decisiones. Me apasiona la estadística y me gusta estar al día de las últimas tendencias y herramientas como actualmemte lo es Quarto.\nMe caracteriza la responsabilidad, el orden y la libertad en la exploración de nuevos recursos en los proyectos que me proponga. Vengo trabajando en muchos proyectos como en el sector financiero, donde he trabajado en temáticas de riesgo crediticio, además de otros proyectos aplicativos de machine-learning.\nTengo el objetivo de ayudar a las poblaciones u organizaciones a mejorar su rendimiento y optimizar sus recursos mediante el uso de técnicas estadísticas avanzadas, asi como tambien de guiar a futuros profesionales.\nPor ello, construí el presente website como producto de los conocimientos que adquiero aprendiendo."
+  },
+  {
+    "objectID": "About.html#educación",
+    "href": "About.html#educación",
+    "title": "Oscar Chullo Puclla",
+    "section": "Educación",
+    "text": "Educación\nUniversidad Nacional de San Antonio Abad del Cusco | Cusco, Perú\nEstudiante de Matemáticas - Estadística | Setiembre 2019 - Actualidad"
+  },
+  {
+    "objectID": "About.html#habilidades",
+    "href": "About.html#habilidades",
+    "title": "Oscar Chullo Puclla",
+    "section": "Habilidades",
+    "text": "Habilidades\nR | Programación - Estadística - Datos | 2022 - Actualidad\nRmarkdown | Redacción académica y científica | 2023 - Actualidad\nQuarto | Posit - Quarto markdown | 2023 - Actualidad\nPython | Programación - Estadística | 2023 - Actualidad"
   },
   {
     "objectID": "About.html#experience",
     "href": "About.html#experience",
     "title": "Oscar Chullo Puclla",
-    "section": "",
-    "text": "Google Brain | Principal Investigator | January 2018 - Present\nNetflix | Research Scientist | June 2014 - December 2017"
+    "section": "Experience",
+    "text": "Experience\nGit Page | Website | 2023 - Actualidad\nStack Overflow | Respuestas | 2023 - Actualidad"
   },
   {
     "objectID": "html/prueba.html",
@@ -53,7 +67,7 @@
     "href": "index.html",
     "title": "Hola, bienvenido a mi website.",
     "section": "",
-    "text": "Aquí podrás encontrar información sobre diversos temas, como R, Python, Machine-Learning y más. También podrás interactuar conmigo por los enlaces en la barra de herramientas y pedirme que te ayude con algunas dudas, crear contenido creativo o mejorar.\n\n\n\n \n  \n   \n  \n    \n     twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LindedIn"
+    "text": "Aquí podrás encontrar información sobre diversos temas, como R, Python, Machine-Learning y más. También podrás interactuar conmigo por los enlaces en la barra de herramientas y pedirme que te ayude en algunas temáticas, crear contenido creativo o mejorar.\n\n\n\n \n  \n   \n  \n    \n     twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LindedIn"
   },
   {
     "objectID": "Post/Multivariado/AnalisisCorrSimple.html",
@@ -79,6 +93,13 @@
   {
     "objectID": "Post/Multivariado/AnFact.html",
     "href": "Post/Multivariado/AnFact.html",
+    "title": "Análisis Factorial",
+    "section": "",
+    "text": "El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.\nEl análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.\nAl reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.\n\nEl sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.\nLa multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.\nLa alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.\n\nExisten dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes."
+  },
+  {
+    "objectID": "Post/Multivariado/AnFact.html#concepto",
+    "href": "Post/Multivariado/AnFact.html#concepto",
     "title": "Análisis Factorial",
     "section": "",
     "text": "El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.\nEl análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.\nAl reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.\n\nEl sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.\nLa multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.\nLa alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.\n\nExisten dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes."
@@ -196,39 +217,18 @@
     "text": "Ortogonalidad de las PCs\n\npairs.panels(pc2$x,\n             gap=0,\n             bg = c(\"red\", \"blue\")[value$Competition],\n             pch=21)\n\n\n\n\nCálculo de la varianza total explicada por cada componente principal\n\n#calculate total variance explained by each principal component\nvar_explained = pc2$sdev^2 / sum(pc2$sdev^2)\n\n#create scree plot\nlibrary(ggplot2)\n\nqplot(c(1:6), var_explained) + \n  geom_line() + \n  xlab(\"Principal Component\") + \n  ylab(\"Variance Explained\") +\n  ggtitle(\"Scree Plot\") +\n  ylim(0, 1)\n\n\n\n\nSe observa que el PC1 explica alrededor del 51,13% d ela variabilidad y PC2 explica alrededor del 26,47% de la variabilidad.\nOtra forma de interpretar la trama es que PC1 está correlacionado positivamente con la variable Squad_size, y PC1 está correlacionado negativamente con Age, Market_value, Market_value_of_players, MV_Top_18_players, Share_of_MV.\nPC2 está correlacionado con Age y Share_of_MV, pero está correlacionado negativamente con Squad_size, Market_value, Market_value_of_players, MV_Top_18_players.\n\nlibrary(ggplot2)\nlibrary(usethis)\nlibrary(devtools)\ninstall_github(\"vqv/ggbiplot\")\nlibrary(ggbiplot)\ng &lt;- ggbiplot(pc2,\n              obs.scale = 1,\n              var.scale = 1,\n              groups = valu$Competition,\n              ellipse = TRUE,\n              circle = TRUE,\n              ellipse.prob = 0.68)\ng &lt;- g + scale_color_discrete(name = '')\ng &lt;- g + theme(legend.direction = 'horizontal',\n               legend.position = 'top')\nprint(g)\n\n\n\n\nBi plot es una herramienta importante en PCA para comprender lo que sucede en el conjunto de datos."
   },
   {
-    "objectID": "Post/Multivariado/PruebaPCA.html",
-    "href": "Post/Multivariado/PruebaPCA.html",
-    "title": "PCA",
-    "section": "",
-    "text": "El análisis de componentes principales (PCA) en la programación R es un análisis de los componentes lineales de todos los atributos existentes. Los componentes principales son combinaciones lineales (transformación ortogonal) del predictor original en el conjunto de datos. Es una técnica útil para EDA (análisis exploratorio de datos) y permite visualizar mejor las variaciones presentes en un conjunto de datos con muchas variables.\nUna de las aplicaciones del PCA es la reducción de dimensionalidad (variables), perdiendo la menor cantidad de información (varianza) posible: cuando tenemos un gran número de variables cuantitativas posiblemente correlacionadas (indicativas de la existencia de información redundante), el PCA nos permite reducirlos a un número menor de variables transformadas (componentes principales) que explican gran parte de la variabilidad de los datos. Cada dimensión o componente principal generado por PCA será una combinación lineal de las variables originales, y además serán independientes o no correlacionadas entre sí. Los componentes principales generados pueden, a su vez, utilizarse en métodos de aprendizaje supervisado, como la regresión de componentes principales o mínimos cuadrados parciales.\nEl PCA también sirve como herramienta para la visualización de datos: supóngase que quisiéramos representar \\(n\\) observaciones con medidas sobre \\(p\\) variables \\((X=X1,X2,...,Xp)\\) como parte de un análisis exploratorio de los datos. Lo que podríamos hacer es examinar representaciones bidimensionales, sin embargo, existen un total de \\((p2)=p(p−1)/2\\) posibles representaciones entre pares de variables, y si el número de variables es muy alto, estas representaciones se harían inviables, además de que posiblemente la información contenida en cada una sería solo una pequeña fracción de la información total contenida en los datos.\nEl PCA puede considerarse como una rotación de los ejes del sistema de coordenadas de las variables originales a nuevos ejes ortogonales, de manera que estos ejes coincidan con la dirección de máxima varianza de los datos.\nNOTA: El PCA no requiere la suposición de normalidad multivariante de los datos."
-  },
-  {
-    "objectID": "Post/Multivariado/PruebaPCA.html#descripción",
-    "href": "Post/Multivariado/PruebaPCA.html#descripción",
-    "title": "PCA",
-    "section": "Descripción",
-    "text": "Descripción\nLos conjuntos de datos incluyen:\n\nClub: nombre del club\nCompetición: competición a la que pertenece el club\nTamaño del equipo\nValor de mercado\nValor de mercado de los jugadores\nMV mejores 18 jugadores\nProporción de VM"
-  },
-  {
-    "objectID": "Post/Multivariado/PruebaPCA.html#conjunto-de-datos-de-los-100-mejores-clubes",
-    "href": "Post/Multivariado/PruebaPCA.html#conjunto-de-datos-de-los-100-mejores-clubes",
-    "title": "PCA",
-    "section": "Conjunto de datos de los 100 mejores clubes",
-    "text": "Conjunto de datos de los 100 mejores clubes\nPara este análisis son 7 variables a estudiar, de las cuales 1 es cualitativa, mientras que las otras 6 son cuantitativas.\n\nlibrary(readr)\nvalue &lt;- read_csv(\"datos/value.csv\", \n     col_types = cols(Age = col_number(), \n         Squad_size = col_number(), Market_value = col_number(), \n         Market_value_of_players = col_number(), \n         MV_Top_18_players = col_number(), \n         Share_of_MV = col_number()))\nstr(value)\n\nspc_tbl_ [100 × 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n $ Club                   : chr [1:100] \"Manchester City\" \"Paris Saint-Germain\" \"Manchester United\" \"Chelsea FC\" ...\n $ Competition            : chr [1:100] \"Premier League\" \"Ligue 1\" \"Premier League\" \"Premier League\" ...\n $ Age                    : num [1:100] 27.2 26.1 28 26.8 27 25.9 27.2 28.1 25.5 25.3 ...\n $ Squad_size             : num [1:100] 23 35 28 27 27 26 27 22 24 29 ...\n $ Market_value           : num [1:100] 1050 998 937 882 880 ...\n $ Market_value_of_players: num [1:100] 45.8 28.5 33.5 32.7 32.6 ...\n $ MV_Top_18_players      : num [1:100] 988 889 850 816 810 ...\n $ Share_of_MV            : num [1:100] 93.9 89.1 90.7 92.5 92.2 96.1 89.2 96.7 90.7 91.6 ...\n - attr(*, \"spec\")=\n  .. cols(\n  ..   Club = col_character(),\n  ..   Competition = col_character(),\n  ..   Age = col_number(),\n  ..   Squad_size = col_number(),\n  ..   Market_value = col_number(),\n  ..   Market_value_of_players = col_number(),\n  ..   MV_Top_18_players = col_number(),\n  ..   Share_of_MV = col_number()\n  .. )\n - attr(*, \"problems\")=&lt;externalptr&gt;"
-  },
-  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Contenidos",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\nReading Time\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis Discriminante\n\n\nOscar Chullo Puclla\n\n\n2 min\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nAnálisis Factorial\n\n\nOscar Chullo Puclla\n\n\n9 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Componentes Principales\n\n\nOscar Chullo Puclla\n\n\n6 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Correspondencia Simple\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nClúster\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\nCategories\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis Discriminante\n\n\nOscar Chullo Puclla\n\n\nR,Multivariado\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nAnálisis Factorial\n\n\nOscar Chullo Puclla\n\n\nR,Multivariado\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Componentes Principales\n\n\nOscar Chullo Puclla\n\n\nR,PCA,Multivariado\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Correspondencia Simple\n\n\nOscar Chullo Puclla\n\n\nR,Multivariado\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nClúster\n\n\nOscar Chullo Puclla\n\n\nR,Clúster,Multivariado\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html#r",
     "href": "projects.html#r",
     "title": "Contenidos",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\nReading Time\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis Discriminante\n\n\nOscar Chullo Puclla\n\n\n2 min\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nAnálisis Factorial\n\n\nOscar Chullo Puclla\n\n\n9 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Componentes Principales\n\n\nOscar Chullo Puclla\n\n\n6 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Correspondencia Simple\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nClúster\n\n\nOscar Chullo Puclla\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\nCategories\n\n\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis Discriminante\n\n\nOscar Chullo Puclla\n\n\nR,Multivariado\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nAnálisis Factorial\n\n\nOscar Chullo Puclla\n\n\nR,Multivariado\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Componentes Principales\n\n\nOscar Chullo Puclla\n\n\nR,PCA,Multivariado\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nAnálisis de Correspondencia Simple\n\n\nOscar Chullo Puclla\n\n\nR,Multivariado\n\n\n\n\n\n\n\nSep 6, 2023\n\n\nClúster\n\n\nOscar Chullo Puclla\n\n\nR,Clúster,Multivariado\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html#time-series",
@@ -245,24 +245,17 @@
     "text": "Project 2\nprueba"
   },
   {
-    "objectID": "projects.html#project-3",
-    "href": "projects.html#project-3",
+    "objectID": "projects.html#curriculum-vitae",
+    "href": "projects.html#curriculum-vitae",
     "title": "Contenidos",
-    "section": "Project 3",
-    "text": "Project 3\ncv"
+    "section": "Curriculum vitae",
+    "text": "Curriculum vitae\nPuede visualizar mi curriculum vitae en:\nCV"
   },
   {
-    "objectID": "Untitled/Untitled.html",
-    "href": "Untitled/Untitled.html",
-    "title": "Some stuff about me",
+    "objectID": "Untitled/cv1.html",
+    "href": "Untitled/cv1.html",
+    "title": "Resumen",
     "section": "",
-    "text": "Some stuff about me\n\nI poisoned myself doing research.\nI was the first woman to win a Nobel prize\nI was the first person and only woman to win a Nobel prize in two different sciences.\n\n\n\nEducation\n\n\n# A tibble: 3 × 5\n  what                  when    with                where          why      \n  &lt;chr&gt;                 &lt;chr&gt;   &lt;chr&gt;               &lt;chr&gt;          &lt;list&gt;   \n1 Informal studies      1889-91 Flying University   Warsaw, Poland &lt;chr [0]&gt;\n2 Master of Physics     1893    Sorbonne Université Paris, France  &lt;chr [0]&gt;\n3 Master of Mathematics 1894    Sorbonne Université Paris, France  &lt;chr [0]&gt;\n\n\n\n\nNobel Prizes\n\n\n# A tibble: 2 × 3\n  what                      when with                                           \n  &lt;glue&gt;                   &lt;dbl&gt; &lt;chr&gt;                                          \n1 Nobel Prize in Physics    1903 Awarded for her work on radioactivity with Pie…\n2 Nobel Prize in Chemistry  1911 Awarded for the discovery of radium and poloni…\n\n\n\n\nPublications\n\n\n\nC:/Users/USUARIO/AppData/Local/Temp/RtmpqIoERR/file1fe413093c22.yaml"
-  },
-  {
-    "objectID": "Post/Multivariado/AnFact.html#concepto",
-    "href": "Post/Multivariado/AnFact.html#concepto",
-    "title": "Análisis Factorial",
-    "section": "",
-    "text": "El análisis factorial (FA) es un método estadístico que se utiliza para buscar algunas variables no observadas (latentes) llamadas factores a partir de variables observadas.\nEl análisis factorial se utiliza para analizar las relaciones entre una gran cantidad de variables observadas y para identificar una cantidad menor de variables subyacentes no observadas, que se denominan factores. El objetivo del análisis factorial es reducir la complejidad de un conjunto de datos e identificar la estructura subyacente que explica los datos observados.\nAl reducir el número de variables en el modelo, el análisis factorial puede ayudar a superar problemas de sobreajuste, multicolinealidad y alta dimensionalidad.\n\nEl sobreajuste ocurre cuando un modelo es demasiado complejo y se ajusta demasiado a los datos de entrenamiento, lo que puede provocar un rendimiento deficiente con datos nuevos.\nLa multicolinealidad ocurre cuando dos o más variables están altamente correlacionadas entre sí, lo que puede conducir a estimaciones inestables y poco confiables de los coeficientes del modelo.\nLa alta dimensionalidad ocurre cuando hay demasiadas variables en el modelo, lo que puede conducir a una ineficiencia computacional y una interpretación reducida del modelo.\n\nExisten dos tipos de AF, llamados análisis factorial exploratorio y confirmatorio (EFA y CFA). Tanto EFA como CFA tienen como objetivo reproducir las relaciones observadas entre un grupo de características con un conjunto más pequeño de variables latentes. La EFA se utiliza de manera descriptiva y basada en datos para descubrir qué variables medidas son indicadores razonables de las diversas dimensiones latentes. Por el contrario, el AFC se lleva a cabo de una manera a priori, de prueba de hipótesis que requiere sólidos fundamentos empíricos o teóricos. Aquí nos centraremos principalmente en EFA, que se utiliza para agrupar características en un número específico de factores latentes."
+    "text": "Resumen\nSoy Estudiante de la Escuela Profesional de Matemáticas - Estadística, actualmente estoy en el noveno ciclo, aspiro a ser data science, tengo dominio de R, Python e inglés básico. Soy de naturaleza explorativa en aplicaciones de la estadistica.\n\n\nFormación Académica\n\n\n# A tibble: 1 × 5\n  what                     when                     with             where why  \n  &lt;chr&gt;                    &lt;chr&gt;                    &lt;chr&gt;            &lt;chr&gt; &lt;lis&gt;\n1 Matemática - Estadística Agosto 2019 - Actualidad Universidad Nac… Cusc… &lt;chr&gt;\n\n\n\n\nCursos y/o Estudios complementarios\n\n\n# A tibble: 4 × 5\n  what                         when                        with      where why  \n  &lt;chr&gt;                        &lt;chr&gt;                       &lt;chr&gt;     &lt;chr&gt; &lt;lis&gt;\n1 BootCamp en ciencia de datos Setiembre 2023 - Actualidad Data Gro… Actu… &lt;chr&gt;\n2 Inglés                       Setiembre 2020 - Julio 2022 Centro d… He a… &lt;chr&gt;\n3 Ofimática                    Marzo 2022 - Marzo 2022     Institut… He a… &lt;chr&gt;\n4 Habilidades Productivas      Actualidad                  Data Sci… Esto… &lt;chr&gt;\n\n\n\n\nLogros\n\n\n# A tibble: 4 × 5\n  what                        when           with                    where why  \n  &lt;chr&gt;                       &lt;chr&gt;          &lt;chr&gt;                   &lt;chr&gt; &lt;lis&gt;\n1 Aprender R                  \"Autodidacta\"  Aprendi R explorando a… &lt;NA&gt;  &lt;chr&gt;\n2 Aprender R markdown         \"Autodidacta \" Aprendi R markdown exp… &lt;NA&gt;  &lt;chr&gt;\n3 Creacion de blogs y website \"Autodidacta\"  Aprendi a crear y admi… &lt;NA&gt;  &lt;chr&gt;\n4 Programación en Python      \"Cursos\"       Estoy participando en … &lt;NA&gt;  &lt;chr&gt;\n\n\n\n\nPublicaciones\n\n\n\nC:/Users/USUARIO/AppData/Local/Temp/RtmpEpdcM3/file31bc78af1fb3.yaml"
   }
 ]

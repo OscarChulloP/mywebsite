@@ -5,7 +5,20 @@ about:
   template: trestles
   image: img/perf.jpg
   image-shape: round
-description: "Probabndo letras"
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/OChP193029?t=TN4dFKDvftisC453R5JtdQ&s=09
+    - icon: github
+      text: Github
+      href: https://github.com/OscarChulloP
+    - icon: linkedin
+      text: LindedIn
+      href: https://www.linkedin.com/in/oscar-chullo-puclla-87644a28b/
+    - icon: r-circle-fill
+      text: Rpubs
+      href: https://rpubs.com/Oscar_ChulloP
+description: "Estudiante de Matemáticas - Estadística"
 format:
   html:
     toc: true
@@ -14,29 +27,34 @@ format:
     toc-location: right
 ---
  
-# Presentacion
+## Presentación
 
-Modificar texto
+Hola, mi nombre es Oscar Chullo Puclla y soy matemático - estadístico. Me dedico a analizar datos y extraer información relevante para la toma de decisiones. Me apasiona la estadística y me gusta estar al día de las últimas tendencias y herramientas como actualmemte lo es Quarto. 
 
-studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+Me caracteriza la responsabilidad, el orden y la libertad en la exploración de nuevos recursos en los proyectos que me proponga. Vengo trabajando en muchos proyectos como en el sector financiero, donde he trabajado en temáticas de riesgo crediticio, además de otros proyectos aplicativos de machine-learning. 
 
-## Education
+Tengo el objetivo de ayudar a las poblaciones u organizaciones a mejorar su rendimiento y optimizar sus recursos mediante el uso de técnicas estadísticas avanzadas, asi como tambien de guiar a futuros profesionales.
 
-**Massachusetts Institute of Technology** | Cambridge, MA
+Por ello, construí el presente website como producto de los conocimientos que adquiero aprendiendo.
 
-Ph.D. in Computer Science | September 2009 - May 2014
+## Educación
 
-**The University of California, Berkeley** | Berkeley, CA
+**Universidad Nacional de San Antonio Abad del Cusco** | Cusco, Perú
 
-B.S. in Computer Science | September 2005 - May 2009
+Estudiante de Matemáticas - Estadística | Setiembre 2019 - Actualidad
+
+## Habilidades
+
+**R**   | Programación - Estadística - Datos | 2022 - Actualidad
+
+**Rmarkdown** | Redacción académica y científica | 2023 - Actualidad
+
+**Quarto** | Posit - Quarto markdown | 2023 - Actualidad
+
+**Python** | Programación - Estadística  | 2023 - Actualidad
 
 ## Experience
 
-**Google Brain** | Principal Investigator | January 2018 - Present
+**Git Page** | Website | 2023 - Actualidad
 
-**Netflix** | Research Scientist | June 2014 - December 2017
+**Stack Overflow** | Respuestas | 2023 - Actualidad

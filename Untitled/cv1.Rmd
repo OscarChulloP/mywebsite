@@ -1,0 +1,72 @@
+---
+name: Oscar Chullo Puclla
+position: "ESTUDIANTE"
+profilepic: perf.jpg
+address: "Universidad Nacional de San Antonio Abad del Cusco"
+phone: +51 972 593360 / 967 025443
+www: oscarchullop.github.io/mywebsite/
+email: "oscarchullop@gmail.com"
+twitter: OChP193029
+github: OscarChulloP
+linkedin: oscar-chullo-puclla-87644a28b/
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Resumen
+
+Soy Estudiante de la Escuela Profesional de Matemáticas - Estadística, actualmente estoy en el noveno ciclo, aspiro a ser data science, tengo dominio de R, Python e inglés básico. Soy de naturaleza explorativa en aplicaciones de la estadistica.
+
+# Formación Académica
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Matemática - Estadística", "Agosto 2019 - Actualidad", "Universidad Nacional de San Antonio Abad del Cusco", "Cusco, Perú"
+) %>%
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Cursos y/o Estudios complementarios
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Desc,
+  "BootCamp en ciencia de datos", "Setiembre 2023 - Actualidad", "Data Growth", "Actualmente estoy llevando estos estudios complementarios para aprender mas de Python y sus aplicaciones de estadística",
+  "Inglés", "Setiembre 2020 - Julio 2022", "Centro de Idiomas UNSAAC", "He aprendido el idioma Ingles de nivel básico",
+  "Ofimática", "Marzo 2022 - Marzo 2022", "Instituto de Sistemas - UNSAAC", "He aprendido Microsoft Word,  Power Point y Excel.",
+  "Habilidades Productivas", "Actualidad","Data Science Women", "Estoy participando en diversos webinar para reforzar y desarrollar diversas habilidades profesionales"
+) %>%
+  detailed_entries(Degree, Year, Institution, Desc)
+```
+
+# Logros
+
+```{r}
+tribble(
+  ~ Degree, ~ Institution, ~ Desc,
+  "Aprender R", "Autodidacta", "Aprendi R explorando aplicaciones estadísticas",
+  "Aprender R markdown", "Autodidacta ", "Aprendi R markdown explorando casos concretos de redacción académica y científica",
+  "Creacion de blogs y website", "Autodidacta", "Aprendi a crear y administrar blogs y website utilizando Rmarkdown y Quarto",
+  "Programación en Python", "Cursos", "Estoy participando en diversos webinar y cursos para seguir aprendiendo"
+) %>%
+  detailed_entries(Degree, Institution, Desc)
+```
+
+# Publicaciones
+
+```{r}
+library(dplyr)
+knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("packages.bib") %>%
+  arrange(desc(author$family), issued)
+```

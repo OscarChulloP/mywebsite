@@ -11,7 +11,7 @@ website:
       - projects.qmd
       - href: About.qmd
         text: About
-      - href: Untitled/Untitled.pdf
+      - href: Untitled/cv1.pdf
         text: CV
     tools:
       - icon: stack-overflow

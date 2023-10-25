@@ -4,10 +4,16 @@ listing:
   - id: R
     contents: "Post/Multivariado/*.qmd" 
     type: table
-    fields: [image, date, title, author, reading-time]
+    fields: [image, date, title, author, categories]
   - id: TS
     contents: "Post/Time_Series/*.qmd" 
     type: table
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-title: Contenidos
+    toc-location: right
 ---
 
 ## R
@@ -26,6 +32,8 @@ hola mundo `wey`
 
 [prueba](html/prueba.qmd)
 
-## Project 3
+## Curriculum vitae
 
-[cv](Untitled/Untitled.Rmd)
+Puede visualizar mi curriculum vitae en:
+
+[CV](Untitled/cv1.Rmd)

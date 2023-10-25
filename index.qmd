@@ -23,7 +23,7 @@ format:
 
 :::{#me}
 
-Aquí podrás encontrar información sobre diversos temas, como `R`, `Python`, `Machine-Learning` y más. También podrás interactuar conmigo por los enlaces en la barra de herramientas y pedirme que te ayude con algunas dudas, crear contenido creativo o mejorar. 
+Aquí podrás encontrar información sobre diversos temas, como **R**, **Python**, **Machine-Learning** y más. También podrás interactuar conmigo por los enlaces en la barra de herramientas y pedirme que te ayude en algunas temáticas, crear contenido creativo o mejorar. 
 
 ## Espero que disfrutes de tu visita y que encuentres lo que buscas. 
 

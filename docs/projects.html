@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-author','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -155,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Untitled/Untitled.pdf" rel="" target="">
+    <a class="nav-link" href="./Untitled/cv1.pdf" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -178,13 +178,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contenidos</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a></li>
   <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a></li>
   <li><a href="#project-2" id="toc-project-2" class="nav-link" data-scroll-target="#project-2">Project 2</a></li>
-  <li><a href="#project-3" id="toc-project-3" class="nav-link" data-scroll-target="#project-3">Project 3</a></li>
+  <li><a href="#curriculum-vitae" id="toc-curriculum-vitae" class="nav-link" data-scroll-target="#curriculum-vitae">Curriculum vitae</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
 <a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
 </th>
 <th>
-Reading Time
+Categories
 </th>
 </tr>
 </thead>
@@ -271,7 +271,7 @@ Reading Time
 <span class="listing-author">Oscar Chullo Puclla</span>
 </td>
 <td>
-<span class="listing-reading-time">2 min</span>
+<span class="listing-categories">R,Multivariado</span>
 </td>
 </tr>
 <tr data-index="1" data-categories="R,Multivariado" data-listing-date-sort="1697691600000" data-listing-file-modified-sort="1697734163679" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Análisis Factorial" data-listing-filename-sort="AnFact.qmd">
@@ -288,7 +288,7 @@ Reading Time
 <span class="listing-author">Oscar Chullo Puclla</span>
 </td>
 <td>
-<span class="listing-reading-time">9 min</span>
+<span class="listing-categories">R,Multivariado</span>
 </td>
 </tr>
 <tr data-index="2" data-categories="R,PCA,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733193009" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Análisis de Componentes Principales" data-listing-filename-sort="PCA.qmd">
@@ -305,7 +305,7 @@ Reading Time
 <span class="listing-author">Oscar Chullo Puclla</span>
 </td>
 <td>
-<span class="listing-reading-time">6 min</span>
+<span class="listing-categories">R,PCA,Multivariado</span>
 </td>
 </tr>
 <tr data-index="3" data-categories="R,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733229114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Análisis de Correspondencia Simple" data-listing-filename-sort="AnalisisCorrSimple.qmd">
@@ -322,7 +322,7 @@ Reading Time
 <span class="listing-author">Oscar Chullo Puclla</span>
 </td>
 <td>
-<span class="listing-reading-time">1 min</span>
+<span class="listing-categories">R,Multivariado</span>
 </td>
 </tr>
 <tr data-index="4" data-categories="R,Clúster,Multivariado" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1697733210305" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Clúster" data-listing-filename-sort="Cluster.qmd">
@@ -339,7 +339,7 @@ Reading Time
 <span class="listing-author">Oscar Chullo Puclla</span>
 </td>
 <td>
-<span class="listing-reading-time">1 min</span>
+<span class="listing-categories">R,Clúster,Multivariado</span>
 </td>
 </tr>
 </tbody>
@@ -379,9 +379,10 @@ No matching items
 <h2 class="anchored" data-anchor-id="project-2">Project 2</h2>
 <p><a href="./html/prueba.html">prueba</a></p>
 </section>
-<section id="project-3" class="level2">
-<h2 class="anchored" data-anchor-id="project-3">Project 3</h2>
-<p><a href="./Untitled/Untitled.html">cv</a></p>
+<section id="curriculum-vitae" class="level2">
+<h2 class="anchored" data-anchor-id="curriculum-vitae">Curriculum vitae</h2>
+<p>Puede visualizar mi curriculum vitae en:</p>
+<p><a href="./Untitled/cv1.html">CV</a></p>
 
 
 
