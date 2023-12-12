@@ -29,7 +29,7 @@ format:
  
 ## Presentación
 
-Hola, mi nombre es Oscar Chullo Puclla y soy matemático - estadístico. Me dedico a analizar datos y extraer información relevante para la toma de decisiones. Me apasiona la estadística y me gusta estar al día de las últimas tendencias y herramientas como actualmemte lo es Quarto. 
+Hola, mi nombre es Oscar Chullo Puclla, soy matemático - estadístico. Me dedico a analizar datos y extraer información relevante para la toma de decisiones. Me apasiona la estadística y me gusta estar al día de las últimas tendencias y herramientas como actualmemte lo es Quarto. 
 
 Me caracteriza la responsabilidad, el orden y la libertad en la exploración de nuevos recursos en los proyectos que me proponga. Vengo trabajando en muchos proyectos como en el sector financiero, donde he trabajado en temáticas de riesgo crediticio, además de otros proyectos aplicativos de machine-learning. 
 

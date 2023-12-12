@@ -1,7 +1,7 @@
 ---
 name: Oscar Chullo Puclla
 position: "ESTUDIANTE"
-profilepic: perf.jpg
+profilepic: hi.jpg
 address: "Universidad Nacional de San Antonio Abad del Cusco"
 phone: +51 972 593360 / 967 025443
 www: oscarchullop.github.io/mywebsite/
