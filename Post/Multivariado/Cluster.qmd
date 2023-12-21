@@ -1,7 +1,7 @@
 ---
 title: Clúster
 author: Oscar Chullo Puclla
-date: '2023-09-06'
+date: '2023-10-14'
 slug: []
 categories:
   - R
@@ -9,39 +9,41 @@ categories:
   - Multivariado
 ---
 
-El análisis cluster es una técnica no supervisada, diseñada para clasificar tantas observaciones en grupos de tal forma que:
+El análisis clúster es una técnica no supervisada, diseñada para clasificar las observaciones en grupos de tal forma que:
 
-- Cada grupo (conglomerado o cluster) sea homogéneo respecto a las variables utilizadas para caracterizarlos; es decir, que cada observación contenida en él sea parecida a todas las que estén incluidas en ese grupo. (principio de cohesión).
+- Cada grupo (conglomerado o clúster) sea homogéneo con respecto a las variables utilizadas para caracterizarlos; es decir, que cada observación contenida en él sea parecida a todas las que estén incluidas en dicho grupo. (**principio de cohesión**).
 
-Que los grupos sean lo más distintos posible unos de otros respecto a las variables consideradas. (principio de separación).
+- Que los grupos sean lo más distintos posible unos de otros respecto a las variables consideradas. (**principio de separación**).
 
 # Hierarchical clustering
 
-Hierarchical clustering es una alternativa a los métodos de partitioning clustering que no requiere que se pre-especifique el número de clusters. Los métodos que engloba el hierarchical clustering se subdividen en dos tipos dependiendo de la estrategia seguida para crear los grupos:
+Hierarchical clustering es una alternativa a los métodos de `partitioning clustering` que no requiere que se pre-especifique el número de clusters. 
 
-Agglomerative clustering (bottom-up): el agrupamiento se inicia en la base del árbol, donde cada observación forma un cluster individual. Los clusters se van combinado a medida que la estructura crece hasta converger en una única “rama” central.
+Los métodos que engloba el hierarchical clustering se subdividen en dos tipos con respecto a la estrategia que vaya a seleccionarse para crear los grupos:
 
-Divisive clustering (top-down): es la estrategia opuesta al agglomerative clustering, se inicia con todas las observaciones contenidas en un mismo cluster y se suceden divisiones hasta que cada observación forma un cluster individual.
+1. **Agglomerative clustering (bottom-up)**: El agrupamiento inicia en la base del árbol, en el que cada observación forma un clúster individual. Los clusters se van combinado a medida que la estructura crece hasta converger en una única “rama” central.
 
-En ambos casos, los resultados pueden representarse de forma muy intuitiva en una estructura de árbol llamada dendrograma.
+2. **Divisive clustering (top-down)**: Es la estrategia opuesta al `agglomerative clustering`,puesto que en este caso se inicia con todas las observaciones contenidas en un mismo clúster y se suceden divisiones hasta que cada observación forma un cluster individual.
+
+En ambos casos, los resultados se representan de forma muy intuitiva en una estructura de árbol llamada dendrograma.
 
 # Ejemplo Práctico
 
-Los siguientes datos simulados contienen observaciones que pertenecen a cuatro grupos distintos. Se pretende aplicar hierarchical clustering aglomerativo con el fin de identificarlos.
+Los siguientes datos simulados contienen observaciones que pertenecen a cuatro grupos distintos, en los que se pretende aplicar `hierarchical clustering aglomerativo` con el fin de identificarlos.
 
 ```{r,warning=FALSE}
 library(magrittr)
 library(dplyr)
 library(ggplot2)
-set.seed(101)
+set.seed(123)
 # Se simulan datos aleatorios con dos dimensiones
 datos <- matrix(rnorm(n = 100*2), nrow = 100, ncol = 2,
                 dimnames = list(NULL,c("x", "y")))
 datos <- as.data.frame(datos)
 
-# Se determina la media que va a tener cada grupo en cada una de las dos
-# dimensiones. En total 2*4 medias. Este valor se utiliza para separar
-# cada grupo de los demás.
+# Se determina la media que va a tener cada grupo en cada una de las dos dimensiones. En total 2*4 medias. 
+
+# Este valor se utiliza para separar cada grupo de los demás.
 media_grupos <- matrix(rnorm(n = 8, mean = 0, sd = 4), nrow = 4, ncol = 2,
                        dimnames = list(NULL, c("media_x", "media_y")))
 media_grupos <- as.data.frame(media_grupos)
@@ -64,7 +66,11 @@ ggplot(data = datos, aes(x = x, y = y, color = grupo)) +
   theme_bw()
 ```
 
-Al aplicar un hierarchical clustering aglomerativo se tiene que escoger una medida de distancia (1-similitud) y un tipo de linkage. En este caso, se emplea la función hclust(), a la que se pasa como argumento una matriz de distancia euclidea y el tipo de linkages. Se comparan los resultados con los linkages complete, single y average. Dado que los datos se han simulado considerando que las dos dimensiones tienen aproximadamente la misma magnitud, no es necesario escalarlos ni centrarlos.
+Al aplicar un hierarchical clustering aglomerativo se tiene que escoger una medida de distancia (1-similitud) y un tipo de linkage. 
+
+En este caso, se emplea la función `hclust()`, a la que se pasa como argumento una matriz de distancia euclidea y el tipo de linkages. Se comparan los resultados con los linkages `complete`, `single` y `average.`
+
+Dado que los datos fueron producto de una simulación, considerando que las dos dimensiones tienen aproximadamente la misma magnitud, no será necesario escalarlos ni centrarlos.
 
 ```{r}
 # Se calculan las distancias
@@ -75,7 +81,7 @@ hc_euclidea_single   <- hclust(d = matriz_distancias, method = "single")
 hc_euclidea_average  <- hclust(d = matriz_distancias, method = "average")
 ```
 
-Los objetos devueltos por hclust() pueden representarse en forma de dendrograma con la función plot() o con la función fviz_dend() del paquete factoextra.
+Los objetos devueltos por `hclust()` pueden representarse en forma de dendrograma con la función `plot()` o con la función `fviz_dend()` del paquete `factoextra`.
 
 ```{r}
 par(mfrow = c(3,1))
@@ -95,9 +101,11 @@ plot(x = hc_euclidea_average, cex = 0.6, xlab = "", ylab = "", sub = "",
      main = "Distancia euclídea, Linkage average")
 ```
 
-El conocer que existen 4 grupos en la población permite evaluar qué linkage consigue los mejores resultados. En este caso, los tres tipos identifican claramente 4 clusters, si bien esto no significa que en los 3 dendrogramas los clusters estén formados por exactamente las mismas observaciones.
+El conocer que existen 4 grupos, nos permite evaluar qué linkage consigue los mejores resultados. En este caso, los tres tipos identifican claramente 4 clusters, si bien esto no significa que en los 3 dendrogramas los clusters estén formados por exactamente las mismas observaciones.
 
-Una vez creado el dendrograma, se tiene que decidir a qué altura se corta para generar los clusters. La función cutree() recibe como input un dendrograma y devuelve el cluster al que se ha asignado cada observación dependiendo del número de clusters especificado (argumento k) o la altura de corte indicada (argumento h).
+Una vez creado el dendrograma, se tiene que decidir a qué altura se corta para generar los clústers. 
+
+La función `cutree()` recibe como input un dendrograma y devuelve el cluster al que se ha asignado cada observación dependiendo del número de clusters especificado (argumento k) o la altura de corte indicada (argumento h).
 
 ```{r}
 cutree(hc_euclidea_completo, k = 4)
@@ -120,6 +128,6 @@ abline(h = 6, lty = 2)
 table(cutree(hc_euclidea_completo, h = 6), datos[, "grupo"])
 ```
 
-El método de hierarchical clustering aglomerativo con linkage completo y k=4 ha sido capaz de agrupar correctamente todas las observaciones.
+El método de hierarchical clustering aglomerativo con linkage completo y k=4 ha sido capaz de agrupar correctamente todas las observaciones, pudiendo identificarse los 4 grupos.
 
 

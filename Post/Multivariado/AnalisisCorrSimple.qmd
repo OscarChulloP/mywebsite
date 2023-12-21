@@ -1,12 +1,177 @@
 ---
 title: Análisis de Correspondencia Simple
 author: Oscar Chullo Puclla
-date: '2023-09-06'
+date: '2023-12-21'
 categories:
   - R
   - Multivariado
 ---
+# ACS
 
-pruebas a llenar esto 
+El objetivo de algunas de las técnicas multivariadas consiste en explicar con un menor número de dimensiones (factores o componentes), la información inicial (**Principio de parsimonia**). 
 
-$$x^2=4$$
+Cuando las variables son continuas o medidas en escala de intervalo o de razón, el PCA o el modelo de Análisis Factorial son los procedimientos apropiados para analizar la interdependencia de un conjunto de variables.
+
+En cambio, cuando las variables son cualitativas, es necesario acudir al Análisis de Correspondencia Simple (caso dos variables) o al Análisis de Correspondencia Múltiple (tres o más variables). En esta técnica lo que se busca es encontrar la relación que exista entre las categorías de una variable con las categorías de otra(s) variable(s).
+
+### Prueba de independencia
+
+Resulta necesario identificar si existen asociaciones entre las categorías, ya que en caso de no existir asociaciones no resulta conveniente hacer uso de la técnica de ACS.
+
+# Ejemplo Práctico
+
+Ejemplo extraidon de Luque, T. (2000). Técnicas de Análisis de Datos en Investigación de Mercados. Ediciones Pirámide.
+
+### Datos
+
+Los datos corresponden a una encuesta que se realizó a 500 personas en relación a su opinión con respecto al sistema sanitario público. Se registró adicionalmente, el tipo de renta percibido por cada encuestado.
+
+**Opinión**
+
+```{r}
+datos.acs <- matrix(c(75,40,35,60,50,70,20,40,30,15,40,25),nrow=4,byrow=T)
+dimnames(datos.acs)<- list(renta=c("Bajo","Medio","Alto", "Muy Alto"), opinion=c("Bueno","Malo","Regular"))
+datos.acs
+```
+
+Uso del package `kableExtra` para organizar visualmente los datos
+
+```{r,warning=FALSE,message=FALSE}
+library(kableExtra)
+library(magrittr)
+datos.acs %>% kable() %>% kable_styling()
+```
+
+```{r}
+addmargins(datos.acs)%>% kable() %>% kable_styling()
+```
+
+### Visualización de una Tabla de Contingencia usando una matriz gráfica
+
+Con las gráficas se analizará la asociación entre las variables
+
+### Visualización por Balloonplots
+
+```{r,warning=FALSE}
+library(gplots)
+# Convertir los datos en una tabla
+dt <- as.table(datos.acs)
+dt <- prop.table(dt,margin=1); dt
+```
+
+```{r}
+balloonplot(t(dt), 
+            main ="Gráfico Opinión Renta", 
+            xlab ="Opinión", 
+            ylab="Renta",
+            label = F, cum.margins=F, 
+            label.lines=F, show.margins = FALSE)
+```
+
+### Visualización por Mosaicos
+
+```{r}
+library(graphics)
+mosaicplot(t(dt),shade=F)
+```
+
+### Prueba de Independencia Chi-Cuadrado
+
+Contrastamos la hipótesis nula de independencia entre las dos variables que conforman la tabla de contingencia.
+
+- **Ho:** Las variables son independientes
+
+- **Ha:** Las variables son dependientes
+
+```{r}
+prueba <- chisq.test(datos.acs);prueba
+```
+
+```{r}
+# Frecuencia Relativa (fij)
+prop.table(datos.acs)
+```
+
+# Library(FactoMineR)
+
+Con la función CA de FactoMineR se obtienen los autovalores y la prueba de independencia de Chi Cuadrado.
+
+```{r,warning=FALSE}
+library(FactoMineR) 
+#3 filas y 4 columnas min(3,4)-1 -> ncp=2
+res.ca <- CA(datos.acs,ncp=2,graph=F)
+res.ca 
+```
+
+```{r}
+# Scree Plot de los Autovalores
+res.ca$eig
+```
+
+```{r,warning=FALSE}
+library(factoextra)
+fviz_screeplot(res.ca, addlabels = TRUE, ylim = c(0, 90))
+```
+
+### Gráficos- Biplot 
+
+```{r}
+plot.CA(res.ca) 
+```
+
+```{r}
+plot.CA(res.ca, axes = c(1,2), col.row = "blue", col.col = "red")
+```
+
+```{r}
+plot.CA(res.ca,mass=c(T,T))
+```
+
+```{r}
+fviz_ca_biplot(res.ca, repel = T)
+```
+
+### Indicadores ACS
+
+```{r}
+summary(res.ca,nb.dec = 3, ncp = 2)
+```
+
+```{r}
+# Coordenadas de las Dimensiones para filas y columnas 
+row <- get_ca_row(res.ca)
+col <- get_ca_col(res.ca)
+head(row$coord)
+```
+
+```{r}
+head(col$coord)
+```
+
+```{r}
+# Gráficos de las contribuciones absolutas de las filas y columnas a cada dimensión
+head(row$contrib)
+```
+
+```{r}
+head(col$contrib)
+```
+
+```{r}
+fviz_contrib(res.ca, choice = "row", axes = 1)
+```
+
+```{r}
+fviz_contrib(res.ca, choice = "row", axes = 2)
+```
+
+```{r}
+fviz_contrib(res.ca, choice = "col", axes = 1)
+```
+
+```{r}
+fviz_contrib(res.ca, choice = "col", axes = 2)
+```
+
+
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Oscar Chullo Puclla">
-<meta name="dcterms.date" content="2023-09-06">
+<meta name="dcterms.date" content="2023-10-14">
 
 <title>Soul to Squeeze - Clúster</title>
 <style>
@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 6, 2023</p>
+      <p class="date">October 14, 2023</p>
     </div>
   </div>
   
@@ -198,21 +198,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>El análisis cluster es una técnica no supervisada, diseñada para clasificar tantas observaciones en grupos de tal forma que:</p>
+<p>El análisis clúster es una técnica no supervisada, diseñada para clasificar las observaciones en grupos de tal forma que:</p>
 <ul>
-<li>Cada grupo (conglomerado o cluster) sea homogéneo respecto a las variables utilizadas para caracterizarlos; es decir, que cada observación contenida en él sea parecida a todas las que estén incluidas en ese grupo. (principio de cohesión).</li>
+<li><p>Cada grupo (conglomerado o clúster) sea homogéneo con respecto a las variables utilizadas para caracterizarlos; es decir, que cada observación contenida en él sea parecida a todas las que estén incluidas en dicho grupo. (<strong>principio de cohesión</strong>).</p></li>
+<li><p>Que los grupos sean lo más distintos posible unos de otros respecto a las variables consideradas. (<strong>principio de separación</strong>).</p></li>
 </ul>
-<p>Que los grupos sean lo más distintos posible unos de otros respecto a las variables consideradas. (principio de separación).</p>
 <section id="hierarchical-clustering" class="level1">
 <h1>Hierarchical clustering</h1>
-<p>Hierarchical clustering es una alternativa a los métodos de partitioning clustering que no requiere que se pre-especifique el número de clusters. Los métodos que engloba el hierarchical clustering se subdividen en dos tipos dependiendo de la estrategia seguida para crear los grupos:</p>
-<p>Agglomerative clustering (bottom-up): el agrupamiento se inicia en la base del árbol, donde cada observación forma un cluster individual. Los clusters se van combinado a medida que la estructura crece hasta converger en una única “rama” central.</p>
-<p>Divisive clustering (top-down): es la estrategia opuesta al agglomerative clustering, se inicia con todas las observaciones contenidas en un mismo cluster y se suceden divisiones hasta que cada observación forma un cluster individual.</p>
-<p>En ambos casos, los resultados pueden representarse de forma muy intuitiva en una estructura de árbol llamada dendrograma.</p>
+<p>Hierarchical clustering es una alternativa a los métodos de <code>partitioning clustering</code> que no requiere que se pre-especifique el número de clusters.</p>
+<p>Los métodos que engloba el hierarchical clustering se subdividen en dos tipos con respecto a la estrategia que vaya a seleccionarse para crear los grupos:</p>
+<ol type="1">
+<li><p><strong>Agglomerative clustering (bottom-up)</strong>: El agrupamiento inicia en la base del árbol, en el que cada observación forma un clúster individual. Los clusters se van combinado a medida que la estructura crece hasta converger en una única “rama” central.</p></li>
+<li><p><strong>Divisive clustering (top-down)</strong>: Es la estrategia opuesta al <code>agglomerative clustering</code>,puesto que en este caso se inicia con todas las observaciones contenidas en un mismo clúster y se suceden divisiones hasta que cada observación forma un cluster individual.</p></li>
+</ol>
+<p>En ambos casos, los resultados se representan de forma muy intuitiva en una estructura de árbol llamada dendrograma.</p>
 </section>
 <section id="ejemplo-práctico" class="level1">
 <h1>Ejemplo Práctico</h1>
-<p>Los siguientes datos simulados contienen observaciones que pertenecen a cuatro grupos distintos. Se pretende aplicar hierarchical clustering aglomerativo con el fin de identificarlos.</p>
+<p>Los siguientes datos simulados contienen observaciones que pertenecen a cuatro grupos distintos, en los que se pretende aplicar <code>hierarchical clustering aglomerativo</code> con el fin de identificarlos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -231,15 +234,15 @@ Attaching package: 'dplyr'</code></pre>
     intersect, setdiff, setequal, union</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Se simulan datos aleatorios con dos dimensiones</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span><span class="sc">*</span><span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">100</span>, <span class="at">ncol =</span> <span class="dv">2</span>,</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="cn">NULL</span>,<span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>)))</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(datos)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Se determina la media que va a tener cada grupo en cada una de las dos</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensiones. En total 2*4 medias. Este valor se utiliza para separar</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># cada grupo de los demás.</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Se determina la media que va a tener cada grupo en cada una de las dos dimensiones. En total 2*4 medias. </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Este valor se utiliza para separar cada grupo de los demás.</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>media_grupos <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">8</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">2</span>,</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="cn">NULL</span>, <span class="fu">c</span>(<span class="st">"media_x"</span>, <span class="st">"media_y"</span>)))</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>media_grupos <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(media_grupos)</span>
@@ -264,7 +267,9 @@ Attaching package: 'dplyr'</code></pre>
 <p><img src="Cluster_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Al aplicar un hierarchical clustering aglomerativo se tiene que escoger una medida de distancia (1-similitud) y un tipo de linkage. En este caso, se emplea la función hclust(), a la que se pasa como argumento una matriz de distancia euclidea y el tipo de linkages. Se comparan los resultados con los linkages complete, single y average. Dado que los datos se han simulado considerando que las dos dimensiones tienen aproximadamente la misma magnitud, no es necesario escalarlos ni centrarlos.</p>
+<p>Al aplicar un hierarchical clustering aglomerativo se tiene que escoger una medida de distancia (1-similitud) y un tipo de linkage.</p>
+<p>En este caso, se emplea la función <code>hclust()</code>, a la que se pasa como argumento una matriz de distancia euclidea y el tipo de linkages. Se comparan los resultados con los linkages <code>complete</code>, <code>single</code> y <code>average.</code></p>
+<p>Dado que los datos fueron producto de una simulación, considerando que las dos dimensiones tienen aproximadamente la misma magnitud, no será necesario escalarlos ni centrarlos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se calculan las distancias</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>matriz_distancias <span class="ot">&lt;-</span> <span class="fu">dist</span>(<span class="at">x =</span> datos[, <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>)], <span class="at">method =</span> <span class="st">"euclidean"</span>)</span>
@@ -273,7 +278,7 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>hc_euclidea_single   <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="at">d =</span> matriz_distancias, <span class="at">method =</span> <span class="st">"single"</span>)</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>hc_euclidea_average  <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="at">d =</span> matriz_distancias, <span class="at">method =</span> <span class="st">"average"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Los objetos devueltos por hclust() pueden representarse en forma de dendrograma con la función plot() o con la función fviz_dend() del paquete factoextra.</p>
+<p>Los objetos devueltos por <code>hclust()</code> pueden representarse en forma de dendrograma con la función <code>plot()</code> o con la función <code>fviz_dend()</code> del paquete <code>factoextra</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> hc_euclidea_completo, <span class="at">cex =</span> <span class="fl">0.6</span>, <span class="at">xlab =</span> <span class="st">""</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="at">sub =</span> <span class="st">""</span>,</span>
@@ -296,22 +301,23 @@ Attaching package: 'dplyr'</code></pre>
 <p><img src="Cluster_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>El conocer que existen 4 grupos en la población permite evaluar qué linkage consigue los mejores resultados. En este caso, los tres tipos identifican claramente 4 clusters, si bien esto no significa que en los 3 dendrogramas los clusters estén formados por exactamente las mismas observaciones.</p>
-<p>Una vez creado el dendrograma, se tiene que decidir a qué altura se corta para generar los clusters. La función cutree() recibe como input un dendrograma y devuelve el cluster al que se ha asignado cada observación dependiendo del número de clusters especificado (argumento k) o la altura de corte indicada (argumento h).</p>
+<p>El conocer que existen 4 grupos, nos permite evaluar qué linkage consigue los mejores resultados. En este caso, los tres tipos identifican claramente 4 clusters, si bien esto no significa que en los 3 dendrogramas los clusters estén formados por exactamente las mismas observaciones.</p>
+<p>Una vez creado el dendrograma, se tiene que decidir a qué altura se corta para generar los clústers.</p>
+<p>La función <code>cutree()</code> recibe como input un dendrograma y devuelve el cluster al que se ha asignado cada observación dependiendo del número de clusters especificado (argumento k) o la altura de corte indicada (argumento h).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(hc_euclidea_completo, <span class="at">k =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] 1 2 3 1 2 3 1 2 3 3 4 3 3 4 2 4 1 4 1 1 1 1 1 4 3 3 2 1 2 3 1 4 1 2 2 4 4
- [38] 2 4 4 1 2 2 1 1 4 1 3 1 2 1 3 3 4 4 2 4 2 3 3 2 1 1 1 2 2 3 3 4 1 1 3 3 4
- [75] 3 4 1 3 3 3 2 3 2 3 1 4 3 1 1 3 3 2 1 2 3 3 4 4 3 3</code></pre>
+<pre><code>  [1] 1 2 2 3 3 2 2 3 2 3 1 4 2 2 3 4 4 3 4 2 4 3 4 3 3 2 4 1 2 4 4 1 4 1 4 2 1
+ [38] 4 1 2 1 4 2 4 1 3 4 2 3 4 1 3 4 1 3 2 1 4 3 2 2 3 4 3 4 4 4 1 2 4 4 4 1 1
+ [75] 2 1 2 1 4 4 1 3 3 2 4 1 1 4 3 1 1 1 4 2 1 2 4 1 1 1</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(hc_euclidea_completo, <span class="at">h =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] 1 2 3 1 2 3 1 2 3 3 4 3 3 4 2 4 1 4 1 1 1 1 1 4 3 3 2 1 2 3 1 4 1 2 2 4 4
- [38] 2 4 4 1 2 2 1 1 4 1 3 1 2 1 3 3 4 4 2 4 2 3 3 2 1 1 1 2 2 3 3 4 1 1 3 3 4
- [75] 3 4 1 3 3 3 2 3 2 3 1 4 3 1 1 3 3 2 1 2 3 3 4 4 3 3</code></pre>
+<pre><code>  [1] 1 2 2 3 3 2 2 3 2 3 1 4 2 2 3 4 4 3 4 2 4 3 4 3 3 2 4 1 2 4 4 1 4 1 4 2 1
+ [38] 4 1 2 1 4 2 4 1 3 4 2 3 4 1 3 4 1 3 2 1 4 3 2 2 3 4 3 4 4 4 1 2 4 4 4 1 1
+ [75] 2 1 2 1 4 4 1 3 3 2 4 1 1 4 3 1 1 1 4 2 1 2 4 1 1 1</code></pre>
 </div>
 </div>
 <p>Una forma visual de comprobar los errores en las asignaciones es indicando en el argumento labels el grupo real al que pertenece cada observación. Si la agrupación resultante coincide con los grupos reales, entonces, dentro de cada clusters las labels serán las mismas.</p>
@@ -329,13 +335,13 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>   
      a  b  c  d
-  1  0 28  0  0
-  2  1  0  0 20
-  3 31  0  0  0
-  4  0  0 20  0</code></pre>
+  1  0  0  5 22
+  2 23  0  0  0
+  3  0  0 19  0
+  4  1 26  0  4</code></pre>
 </div>
 </div>
-<p>El método de hierarchical clustering aglomerativo con linkage completo y k=4 ha sido capaz de agrupar correctamente todas las observaciones.</p>
+<p>El método de hierarchical clustering aglomerativo con linkage completo y k=4 ha sido capaz de agrupar correctamente todas las observaciones, pudiendo identificarse los 4 grupos.</p>
 
 
 </section>
