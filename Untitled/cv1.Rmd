@@ -40,7 +40,7 @@ tribble(
 ```{r}
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Desc,
-  "BootCamp en ciencia de datos", "Setiembre 2023 - Actualidad", "Data Growth", "Actualmente estoy llevando estos estudios complementarios para aprender mas de Python y sus aplicaciones de estadística",
+  "BootCamp en ciencia de datos", "Setiembre 2023 - Noviembre 2023", "Data Growth", "He aprendido mas de Python y sus aplicaciones estadísticas",
   "Inglés", "Setiembre 2020 - Julio 2022", "Centro de Idiomas UNSAAC", "He aprendido el idioma Ingles de nivel básico",
   "Ofimática", "Marzo 2022 - Marzo 2022", "Instituto de Sistemas - UNSAAC", "He aprendido Microsoft Word,  Power Point y Excel.",
   "Habilidades Productivas", "Actualidad","Data Science Women", "Estoy participando en diversos webinar para reforzar y desarrollar diversas habilidades profesionales"
