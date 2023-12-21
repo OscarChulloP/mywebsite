@@ -3,7 +3,7 @@ title: "Oscar Chullo Puclla"
 about:
   id: me
   template: trestles
-  image: img/perf.jpg
+  image: img/perf1.jpg
   image-shape: round
   links:
     - icon: twitter
